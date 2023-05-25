@@ -40,17 +40,11 @@ extension SignInView {
             .padding(.leading, 40)
           Spacer()
           Text("CONTINUE WITH FACEBOOK")
-            .font(.custom(HelveticaNeue.medium, size: 14))
-            .foregroundColor(.white)
           Spacer()
           Spacer()
         }
       }
-      .frame(maxWidth: .infinity)
-      .frame(maxHeight: 63)
-      .background(Colors.fbPurple)
-      .cornerRadius(38)
-      .padding(.horizontal, 20)
+      .modifier(FacebookButtonModifier())
       
       Button(action: {}) {
         HStack {
@@ -58,17 +52,11 @@ extension SignInView {
             .padding(.leading, 40)
           Spacer()
           Text("CONTINUE WITH GOOGLE")
-            .font(.custom(HelveticaNeue.medium, size: 14))
-            .foregroundColor(.black)
           Spacer()
           Spacer()
         }
       }
-      .frame(maxWidth: .infinity)
-      .frame(maxHeight: 63)
-      .overlay(RoundedRectangle(cornerRadius: 38)
-        .stroke(.gray.opacity(0.6), lineWidth: 1))
-      .padding(.horizontal, 20)
+      .modifier(GoogleButtonModifier())
     }
   }
   
