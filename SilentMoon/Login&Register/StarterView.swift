@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct StarterView: View {
-    var body: some View {
-      VStack {
-        ZStack {
-           Image("curvedFrame")
-            .resizable()
-            .scaledToFit()
-          VStack {
-            logoContainer
-            Image("starterImage")
-          }
+  var body: some View {
+    VStack {
+      ZStack {
+        Image("curvedFrame")
+          .resizable()
+          .scaledToFit()
+        VStack {
+          logoContainer
+          Image("starterImage")
         }
-        textContainer
-        Spacer()
-        buttonContainer
-        Spacer()
       }
-      .ignoresSafeArea(edges: .top)
+      textContainer
+      Spacer()
+      buttonContainer
+      Spacer()
     }
+    .ignoresSafeArea(edges: .top)
+  }
 }
 
 extension StarterView {
@@ -57,13 +57,7 @@ extension StarterView {
     VStack(spacing: 20) {
       Button(action: {}) {
         Text("SIGN UP")
-          .font(.custom(HelveticaNeue.medium, size: 14))
-          .foregroundColor(.white)
-          .frame(maxWidth: .infinity)
-          .frame(maxHeight: 63)
-          .background(Colors.primaryPurple)
-          .cornerRadius(38)
-          .padding(.horizontal, 20)
+          .modifier(PrimaryButtonModifier())
       }
       HStack {
         Text("ALREADY HAVE AN ACCOUNT?")
@@ -80,7 +74,7 @@ extension StarterView {
 }
 
 struct StarterView_Previews: PreviewProvider {
-    static var previews: some View {
-      StarterView()
-    }
+  static var previews: some View {
+    StarterView()
+  }
 }

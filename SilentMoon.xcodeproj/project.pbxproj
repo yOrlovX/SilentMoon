@@ -19,6 +19,7 @@
 		929B88102A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929B880F2A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf */; };
 		929B88132A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929B88112A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf */; };
 		929B88142A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929B88122A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf */; };
+		929B88172A1F6216004FDB23 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B88162A1F6216004FDB23 /* ViewModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		929B880F2A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Bold.ttf"; sourceTree = "<group>"; };
 		929B88112A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Light.ttf"; sourceTree = "<group>"; };
 		929B88122A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Medium.ttf"; sourceTree = "<group>"; };
+		929B88162A1F6216004FDB23 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		92905C312A1E454C00B225E7 /* SilentMoon */ = {
 			isa = PBXGroup;
 			children = (
+				929B88152A1F61F9004FDB23 /* ViewModifiers */,
 				92905C502A1E81BE00B225E7 /* Sleep */,
 				92905C4D2A1E796E00B225E7 /* Helpers */,
 				92905C4A2A1E74CD00B225E7 /* Login&Register */,
@@ -123,6 +126,14 @@
 				92905C512A1E81D700B225E7 /* WelcomeSleepView.swift */,
 			);
 			path = Sleep;
+			sourceTree = "<group>";
+		};
+		929B88152A1F61F9004FDB23 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				929B88162A1F6216004FDB23 /* ViewModifiers.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				92905C4C2A1E74F300B225E7 /* StarterView.swift in Sources */,
 				929B880E2A1F4BCD004FDB23 /* SignInView.swift in Sources */,
 				92905C4F2A1E797B00B225E7 /* Colors.swift in Sources */,
+				929B88172A1F6216004FDB23 /* ViewModifiers.swift in Sources */,
 				92905C352A1E454C00B225E7 /* ContentView.swift in Sources */,
 				92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */,
 				92905C332A1E454C00B225E7 /* SilentMoonApp.swift in Sources */,
