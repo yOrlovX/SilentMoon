@@ -15,4 +15,5 @@ struct Colors {
   static let textFieldBackground = Color("textFieldBackground")
   static let purpleBg = Color("purpleBg")
   static let grayButton = Color("grayButton")
+  static let timePickerBg = Color("timePickerBg")
 }
