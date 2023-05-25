@@ -4,9 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Helvetica Neue 67 Medium Condensed Oblique.otf</string>
-		<string>HelveticaNeueRegular.otf</string>
-		<string>HelveticaNeueBold.ttf</string>
+		<string>HelveticaNeueCyr-Medium.ttf</string>
+		<string>HelveticaNeueCyr-Light.ttf</string>
+		<string>HelveticaNeueCyr-Bold.ttf</string>
 	</array>
 </dict>
 </plist>

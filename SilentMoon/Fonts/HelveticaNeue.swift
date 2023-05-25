@@ -8,7 +8,7 @@
 import Foundation
 
 struct HelveticaNeue {
-  static let regular = "Helvetica_Neue_Regular"
-  static let bold = "Helvetica_Neue_Bold"
-  static let medium = "Helvetica Neue 67 Medium Condensed Oblique"
+  static let light = "HelveticaNeueCyr-Light"
+  static let bold = "HelveticaNeueCyr-Bold"
+  static let medium = "HelveticaNeueCyr-Medium"
 }

@@ -15,6 +15,10 @@
 		92905C4C2A1E74F300B225E7 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C4B2A1E74F300B225E7 /* SignUpView.swift */; };
 		92905C4F2A1E797B00B225E7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C4E2A1E797B00B225E7 /* Colors.swift */; };
 		92905C522A1E81D700B225E7 /* WelcomeSleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C512A1E81D700B225E7 /* WelcomeSleepView.swift */; };
+		929B880E2A1F4BCD004FDB23 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B880D2A1F4BCD004FDB23 /* SignInView.swift */; };
+		929B88102A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929B880F2A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf */; };
+		929B88132A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929B88112A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf */; };
+		929B88142A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929B88122A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,17 +27,15 @@
 		92905C342A1E454C00B225E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		92905C362A1E454E00B225E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92905C392A1E454E00B225E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		92905C412A1E4A2F00B225E7 /* Helvetica_Neue_Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Helvetica_Neue_Medium.otf; sourceTree = "<group>"; };
-		92905C422A1E4A3A00B225E7 /* Helvetica Neue 67 Medium Condensed Oblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Helvetica Neue 67 Medium Condensed Oblique.otf"; sourceTree = "<group>"; };
-		92905C432A1E4A4200B225E7 /* Helvetica Neue 97 Black Condensed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Helvetica Neue 97 Black Condensed.otf"; sourceTree = "<group>"; };
-		92905C442A1E4A4A00B225E7 /* Helvetica Neue 97 Black Condensed Oblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Helvetica Neue 97 Black Condensed Oblique.otf"; sourceTree = "<group>"; };
-		92905C452A1E4A5200B225E7 /* HelveticaNeueBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HelveticaNeueBold.ttf; sourceTree = "<group>"; };
-		92905C462A1E4A5D00B225E7 /* HelveticaNeueRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HelveticaNeueRegular.otf; sourceTree = "<group>"; };
 		92905C472A1E4B8B00B225E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		92905C482A1E512E00B225E7 /* HelveticaNeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelveticaNeue.swift; sourceTree = "<group>"; };
 		92905C4B2A1E74F300B225E7 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		92905C4E2A1E797B00B225E7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		92905C512A1E81D700B225E7 /* WelcomeSleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSleepView.swift; sourceTree = "<group>"; };
+		929B880D2A1F4BCD004FDB23 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		929B880F2A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Bold.ttf"; sourceTree = "<group>"; };
+		929B88112A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Light.ttf"; sourceTree = "<group>"; };
+		929B88122A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,12 +92,9 @@
 		92905C402A1E49CE00B225E7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				92905C412A1E4A2F00B225E7 /* Helvetica_Neue_Medium.otf */,
-				92905C422A1E4A3A00B225E7 /* Helvetica Neue 67 Medium Condensed Oblique.otf */,
-				92905C432A1E4A4200B225E7 /* Helvetica Neue 97 Black Condensed.otf */,
-				92905C442A1E4A4A00B225E7 /* Helvetica Neue 97 Black Condensed Oblique.otf */,
-				92905C452A1E4A5200B225E7 /* HelveticaNeueBold.ttf */,
-				92905C462A1E4A5D00B225E7 /* HelveticaNeueRegular.otf */,
+				929B88112A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf */,
+				929B88122A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf */,
+				929B880F2A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf */,
 				92905C482A1E512E00B225E7 /* HelveticaNeue.swift */,
 			);
 			path = Fonts;
@@ -105,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				92905C4B2A1E74F300B225E7 /* SignUpView.swift */,
+				929B880D2A1F4BCD004FDB23 /* SignInView.swift */,
 			);
 			path = "Login&Register";
 			sourceTree = "<group>";
@@ -184,7 +184,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				92905C3A2A1E454E00B225E7 /* Preview Assets.xcassets in Resources */,
+				929B88102A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf in Resources */,
 				92905C372A1E454E00B225E7 /* Assets.xcassets in Resources */,
+				929B88132A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf in Resources */,
+				929B88142A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92905C4C2A1E74F300B225E7 /* SignUpView.swift in Sources */,
+				929B880E2A1F4BCD004FDB23 /* SignInView.swift in Sources */,
 				92905C4F2A1E797B00B225E7 /* Colors.swift in Sources */,
 				92905C352A1E454C00B225E7 /* ContentView.swift in Sources */,
 				92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */,
