@@ -16,4 +16,5 @@ struct Colors {
   static let purpleBg = Color("purpleBg")
   static let grayButton = Color("grayButton")
   static let timePickerBg = Color("timePickerBg")
+  static let dayCircleBg = Color("dayCircleBg")
 }

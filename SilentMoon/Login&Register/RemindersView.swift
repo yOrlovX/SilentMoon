@@ -20,6 +20,7 @@ struct RemindersView: View {
       Text("Any time you can choose but We recommend first thing in th morning.")
         .font(.custom(HelveticaNeue.light, size: 16))
         .foregroundColor(Colors.grayText)
+        .lineSpacing(5)
       
       DatePicker("", selection: $selectedTime, displayedComponents: .hourAndMinute)
         .labelsHidden()
@@ -34,6 +35,7 @@ struct RemindersView: View {
       Text("Everyday is best, but we recommend picking at least five.")
         .font(.custom(HelveticaNeue.light, size: 16))
         .foregroundColor(Colors.grayText)
+        .lineSpacing(5)
       
       Spacer()
       
