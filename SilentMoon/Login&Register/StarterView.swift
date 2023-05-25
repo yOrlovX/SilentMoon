@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignUpView: View {
+struct StarterView: View {
     var body: some View {
       VStack {
         ZStack {
@@ -28,7 +28,7 @@ struct SignUpView: View {
     }
 }
 
-extension SignUpView {
+extension StarterView {
   private var logoContainer: some View {
     HStack(spacing: 10) {
       Text("Silent")
@@ -42,9 +42,11 @@ extension SignUpView {
   private var textContainer: some View {
     VStack(spacing: 15) {
       Text("We are what we do")
-        .font(.system(size: 30, weight: .bold))
+        .font(.custom(HelveticaNeue.bold, size: 30))
       
       Text("Thousand of people are usign silent moon for smalls meditation ")
+        .lineSpacing(10)
+        .font(.custom(HelveticaNeue.light, size: 16))
         .foregroundColor(.gray)
         .multilineTextAlignment(.center)
         .padding(.horizontal, 50)
@@ -55,7 +57,7 @@ extension SignUpView {
     VStack(spacing: 20) {
       Button(action: {}) {
         Text("SIGN UP")
-          .font(.system(size: 14, weight: .medium))
+          .font(.custom(HelveticaNeue.medium, size: 14))
           .foregroundColor(.white)
           .frame(maxWidth: .infinity)
           .frame(maxHeight: 63)
@@ -65,11 +67,11 @@ extension SignUpView {
       }
       HStack {
         Text("ALREADY HAVE AN ACCOUNT?")
-          .font(.system(size: 14, weight: .medium))
+          .font(.custom(HelveticaNeue.medium, size: 14))
           .foregroundColor(.gray)
         Button(action: {}) {
           Text("LOG IN")
-            .font(.system(size: 14, weight: .medium))
+            .font(.custom(HelveticaNeue.medium, size: 14))
             .foregroundColor(.blue)
         }
       }
@@ -77,8 +79,8 @@ extension SignUpView {
   }
 }
 
-struct SignUpView_Previews: PreviewProvider {
+struct StarterView_Previews: PreviewProvider {
     static var previews: some View {
-      SignUpView()
+      StarterView()
     }
 }
