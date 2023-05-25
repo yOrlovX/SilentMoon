@@ -7,25 +7,42 @@
 
 import SwiftUI
 
+struct CircleView: View {
+  let day: String
+  @Binding var selectedDays: Set<String>
+  
+  var body: some View {
+    ZStack {
+      Circle()
+        .foregroundColor(selectedDays.contains(day) ? Colors.dayCircleBg : Color.white)
+        .frame(width: 50, height: 50)
+        .overlay(
+          Circle()
+            .stroke(Colors.grayText, lineWidth: 1)
+        )
+      
+      Text(day)
+        .foregroundColor(selectedDays.contains(day) ? .white : Colors.grayText)
+        .font(.headline)
+    }
+    .onTapGesture {
+      if selectedDays.contains(day) {
+        selectedDays.remove(day)
+      } else {
+        selectedDays.insert(day)
+      }
+    }
+  }
+}
+
 struct CustomDayPicker: View {
-  @State var selectedDay: Int = 1
-  let days = ["SU","M","T","W","TH","F","S"]
-  let selectedCircleColor = Colors.dayCircleBg
+  let days = ["SU", "M", "T", "W", "TH", "F", "S"]
+  @State private var selectedDays: Set<String> = []
+  
   var body: some View {
     HStack {
-      ForEach(Array(days.enumerated()), id: \.0) { index, day in
-        Button(action: {  self.selectedDay = index + 1
-          print(selectedDay) }) {
-            Circle()
-              .strokeBorder(Color.gray,lineWidth: 1)
-              .frame(width: 40, height: 40)
-              .foregroundColor(self.selectedDay == index ? .black : .white)
-              .overlay {
-                Text(day)
-                  .font(.custom(HelveticaNeue.medium, size: 14))
-                  .foregroundColor(Colors.grayText)
-              }
-          }
+      ForEach(days, id: \.self) { day in
+        CircleView(day: day, selectedDays: $selectedDays)
       }
     }
   }
