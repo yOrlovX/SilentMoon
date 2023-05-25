@@ -20,6 +20,7 @@
 		929B88132A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929B88112A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf */; };
 		929B88142A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929B88122A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf */; };
 		929B88172A1F6216004FDB23 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B88162A1F6216004FDB23 /* ViewModifiers.swift */; };
+		929B88192A1F728A004FDB23 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B88182A1F728A004FDB23 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		929B88112A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Light.ttf"; sourceTree = "<group>"; };
 		929B88122A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Medium.ttf"; sourceTree = "<group>"; };
 		929B88162A1F6216004FDB23 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		929B88182A1F728A004FDB23 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				92905C4B2A1E74F300B225E7 /* StarterView.swift */,
 				929B880D2A1F4BCD004FDB23 /* SignInView.swift */,
+				929B88182A1F728A004FDB23 /* SignUpView.swift */,
 			);
 			path = "Login&Register";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				92905C352A1E454C00B225E7 /* ContentView.swift in Sources */,
 				92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */,
 				92905C332A1E454C00B225E7 /* SilentMoonApp.swift in Sources */,
+				929B88192A1F728A004FDB23 /* SignUpView.swift in Sources */,
 				92905C522A1E81D700B225E7 /* WelcomeSleepView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  SignInView.swift
+//  SignUpView.swift
 //  SilentMoon
 //
 //  Created by Yaroslav Orlov on 25.05.2023.
@@ -7,14 +7,17 @@
 
 import SwiftUI
 
-struct SignInView: View {
+import SwiftUI
+
+struct SignUpView: View {
+  @State private var name: String = ""
   @State private var email: String = ""
   @State private var password: String = ""
   
   var body: some View {
     VStack(spacing: 35) {
       Spacer()
-      Text("Welcome Back!")
+      Text("Create your account")
         .font(.custom(HelveticaNeue.bold, size: 28))
       
       buttonsContainer
@@ -31,7 +34,7 @@ struct SignInView: View {
   }
 }
 
-extension SignInView {
+extension SignUpView {
   private var buttonsContainer: some View {
     VStack(spacing: 20) {
       Button(action: {}) {
@@ -62,6 +65,9 @@ extension SignInView {
   
   private var textFieldsContainer: some View {
     VStack(spacing: 20) {
+      TextField("Name", text: $name)
+        .modifier(TextFieldModifier())
+      
       TextField("Email adress", text: $email)
         .modifier(TextFieldModifier())
       
@@ -71,31 +77,39 @@ extension SignInView {
   }
   
   private var loginButtonContainer: some View {
-    VStack(spacing: 20) {
-      Button(action: {}) {
-        Text("LOG IN")
-          .modifier(PrimaryButtonModifier())
-      }
-      
-      Text("Forgot Password?")
-        .font(.custom(HelveticaNeue.medium, size: 14))
-      Spacer()
+    VStack(spacing: 32) {
       HStack {
-        Text("ALREADY HAVE AN ACCOUNT?")
+        Spacer()
+        Text("I have read the")
+          .foregroundColor(Colors.grayText)
           .font(.custom(HelveticaNeue.medium, size: 14))
-          .foregroundColor(.gray)
-        Button(action: {}) {
-          Text("SIGN IN")
-            .font(.custom(HelveticaNeue.medium, size: 14))
-            .foregroundColor(.blue)
-        }
+        
+        Text("Privace Policy")
+          .foregroundColor(.blue)
+          .font(.custom(HelveticaNeue.medium, size: 14))
+        Spacer()
+        Spacer()
+        Spacer()
+        Spacer()
+        Spacer()
+        Image(systemName: "square")
+          .resizable()
+          .renderingMode(.template)
+          .foregroundColor(Colors.grayText)
+          .scaledToFit()
+          .frame(width: 25, height: 25)
+        Spacer()
+      }
+      Button(action: {}) {
+        Text("GET STARTED")
+          .modifier(PrimaryButtonModifier())
       }
     }
   }
 }
 
-struct SignInView_Previews: PreviewProvider {
+struct SignUpView_Previews: PreviewProvider {
   static var previews: some View {
-    SignInView()
+    SignUpView()
   }
 }
