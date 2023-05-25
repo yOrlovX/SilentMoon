@@ -9,4 +9,5 @@ import SwiftUI
 
 struct Colors {
   static let primaryPurple = Color("primaryPurple")
+  static let darkBackground = Color("darkBackground")
 }

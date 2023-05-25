@@ -14,6 +14,7 @@
 		92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C482A1E512E00B225E7 /* HelveticaNeue.swift */; };
 		92905C4C2A1E74F300B225E7 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C4B2A1E74F300B225E7 /* SignUpView.swift */; };
 		92905C4F2A1E797B00B225E7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C4E2A1E797B00B225E7 /* Colors.swift */; };
+		92905C522A1E81D700B225E7 /* WelcomeSleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C512A1E81D700B225E7 /* WelcomeSleepView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		92905C482A1E512E00B225E7 /* HelveticaNeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelveticaNeue.swift; sourceTree = "<group>"; };
 		92905C4B2A1E74F300B225E7 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		92905C4E2A1E797B00B225E7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		92905C512A1E81D700B225E7 /* WelcomeSleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSleepView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		92905C312A1E454C00B225E7 /* SilentMoon */ = {
 			isa = PBXGroup;
 			children = (
+				92905C502A1E81BE00B225E7 /* Sleep */,
 				92905C4D2A1E796E00B225E7 /* Helpers */,
 				92905C4A2A1E74CD00B225E7 /* Login&Register */,
 				92905C472A1E4B8B00B225E7 /* Info.plist */,
@@ -112,6 +115,14 @@
 				92905C4E2A1E797B00B225E7 /* Colors.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		92905C502A1E81BE00B225E7 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				92905C512A1E81D700B225E7 /* WelcomeSleepView.swift */,
+			);
+			path = Sleep;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 				92905C352A1E454C00B225E7 /* ContentView.swift in Sources */,
 				92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */,
 				92905C332A1E454C00B225E7 /* SilentMoonApp.swift in Sources */,
+				92905C522A1E81D700B225E7 /* WelcomeSleepView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
