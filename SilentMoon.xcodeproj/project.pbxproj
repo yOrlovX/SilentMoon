@@ -11,6 +11,15 @@
 		92905C352A1E454C00B225E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C342A1E454C00B225E7 /* ContentView.swift */; };
 		92905C372A1E454E00B225E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92905C362A1E454E00B225E7 /* Assets.xcassets */; };
 		92905C3A2A1E454E00B225E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92905C392A1E454E00B225E7 /* Preview Assets.xcassets */; };
+		92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C482A1E512E00B225E7 /* HelveticaNeue.swift */; };
+		92905C4C2A1E74F300B225E7 /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C4B2A1E74F300B225E7 /* StarterView.swift */; };
+		92905C4F2A1E797B00B225E7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C4E2A1E797B00B225E7 /* Colors.swift */; };
+		92905C522A1E81D700B225E7 /* WelcomeSleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C512A1E81D700B225E7 /* WelcomeSleepView.swift */; };
+		929B880E2A1F4BCD004FDB23 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B880D2A1F4BCD004FDB23 /* SignInView.swift */; };
+		929B88102A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929B880F2A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf */; };
+		929B88132A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929B88112A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf */; };
+		929B88142A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929B88122A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf */; };
+		929B88172A1F6216004FDB23 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B88162A1F6216004FDB23 /* ViewModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +28,16 @@
 		92905C342A1E454C00B225E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		92905C362A1E454E00B225E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92905C392A1E454E00B225E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		92905C472A1E4B8B00B225E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		92905C482A1E512E00B225E7 /* HelveticaNeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelveticaNeue.swift; sourceTree = "<group>"; };
+		92905C4B2A1E74F300B225E7 /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
+		92905C4E2A1E797B00B225E7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		92905C512A1E81D700B225E7 /* WelcomeSleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSleepView.swift; sourceTree = "<group>"; };
+		929B880D2A1F4BCD004FDB23 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		929B880F2A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Bold.ttf"; sourceTree = "<group>"; };
+		929B88112A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Light.ttf"; sourceTree = "<group>"; };
+		929B88122A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Medium.ttf"; sourceTree = "<group>"; };
+		929B88162A1F6216004FDB23 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +70,12 @@
 		92905C312A1E454C00B225E7 /* SilentMoon */ = {
 			isa = PBXGroup;
 			children = (
+				929B88152A1F61F9004FDB23 /* ViewModifiers */,
+				92905C502A1E81BE00B225E7 /* Sleep */,
+				92905C4D2A1E796E00B225E7 /* Helpers */,
+				92905C4A2A1E74CD00B225E7 /* Login&Register */,
+				92905C472A1E4B8B00B225E7 /* Info.plist */,
+				92905C402A1E49CE00B225E7 /* Fonts */,
 				92905C322A1E454C00B225E7 /* SilentMoonApp.swift */,
 				92905C342A1E454C00B225E7 /* ContentView.swift */,
 				92905C362A1E454E00B225E7 /* Assets.xcassets */,
@@ -65,6 +90,50 @@
 				92905C392A1E454E00B225E7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		92905C402A1E49CE00B225E7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				929B88112A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf */,
+				929B88122A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf */,
+				929B880F2A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf */,
+				92905C482A1E512E00B225E7 /* HelveticaNeue.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		92905C4A2A1E74CD00B225E7 /* Login&Register */ = {
+			isa = PBXGroup;
+			children = (
+				92905C4B2A1E74F300B225E7 /* StarterView.swift */,
+				929B880D2A1F4BCD004FDB23 /* SignInView.swift */,
+			);
+			path = "Login&Register";
+			sourceTree = "<group>";
+		};
+		92905C4D2A1E796E00B225E7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				92905C4E2A1E797B00B225E7 /* Colors.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		92905C502A1E81BE00B225E7 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				92905C512A1E81D700B225E7 /* WelcomeSleepView.swift */,
+			);
+			path = Sleep;
+			sourceTree = "<group>";
+		};
+		929B88152A1F61F9004FDB23 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				929B88162A1F6216004FDB23 /* ViewModifiers.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +195,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				92905C3A2A1E454E00B225E7 /* Preview Assets.xcassets in Resources */,
+				929B88102A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf in Resources */,
 				92905C372A1E454E00B225E7 /* Assets.xcassets in Resources */,
+				929B88132A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf in Resources */,
+				929B88142A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +209,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92905C4C2A1E74F300B225E7 /* StarterView.swift in Sources */,
+				929B880E2A1F4BCD004FDB23 /* SignInView.swift in Sources */,
+				92905C4F2A1E797B00B225E7 /* Colors.swift in Sources */,
+				929B88172A1F6216004FDB23 /* ViewModifiers.swift in Sources */,
 				92905C352A1E454C00B225E7 /* ContentView.swift in Sources */,
+				92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */,
 				92905C332A1E454C00B225E7 /* SilentMoonApp.swift in Sources */,
+				92905C522A1E81D700B225E7 /* WelcomeSleepView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +348,7 @@
 				DEVELOPMENT_TEAM = 72NQPP668A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SilentMoon/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +378,7 @@
 				DEVELOPMENT_TEAM = 72NQPP668A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SilentMoon/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
