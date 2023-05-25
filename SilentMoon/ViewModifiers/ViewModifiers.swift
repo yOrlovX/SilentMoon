@@ -57,3 +57,16 @@ struct GoogleButtonModifier: ViewModifier {
   }
 }
 
+struct GrayButtonModifier: ViewModifier {
+  func body(content: Content) -> some View {
+    content
+      .font(.custom(HelveticaNeue.medium, size: 14))
+      .foregroundColor(.black)
+      .frame(maxWidth: .infinity)
+      .frame(maxHeight: 63)
+      .background(Colors.grayButton)
+      .cornerRadius(38)
+      .padding(.horizontal, 20)
+  }
+}
+

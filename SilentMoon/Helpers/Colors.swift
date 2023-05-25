@@ -13,4 +13,6 @@ struct Colors {
   static let fbPurple = Color("fbPurple")
   static let grayText = Color("grayText")
   static let textFieldBackground = Color("textFieldBackground")
+  static let purpleBg = Color("purpleBg")
+  static let grayButton = Color("grayButton")
 }
