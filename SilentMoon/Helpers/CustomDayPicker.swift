@@ -15,7 +15,7 @@ struct CircleView: View {
     ZStack {
       Circle()
         .foregroundColor(selectedDays.contains(day) ? Colors.dayCircleBg : Color.white)
-        .frame(width: 50, height: 50)
+        .frame(width: 40, height: 40)
         .overlay(
           Circle()
             .stroke(Colors.grayText, lineWidth: 1)
@@ -23,7 +23,7 @@ struct CircleView: View {
       
       Text(day)
         .foregroundColor(selectedDays.contains(day) ? .white : Colors.grayText)
-        .font(.headline)
+        .font(.custom(HelveticaNeue.medium, size: 14))
     }
     .onTapGesture {
       if selectedDays.contains(day) {
@@ -45,6 +45,7 @@ struct CustomDayPicker: View {
         CircleView(day: day, selectedDays: $selectedDays)
       }
     }
+    .padding(.horizontal, 20)
   }
 }
 
