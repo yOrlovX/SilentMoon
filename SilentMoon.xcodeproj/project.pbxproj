@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		92258D602A20EA4400653623 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92258D5F2A20EA4400653623 /* CustomTabBar.swift */; };
-		92258D632A20F17B00653623 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92258D622A20F17B00653623 /* HomeView.swift */; };
+		92258D632A20F17B00653623 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92258D622A20F17B00653623 /* MainView.swift */; };
 		92905C332A1E454C00B225E7 /* SilentMoonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C322A1E454C00B225E7 /* SilentMoonApp.swift */; };
-		92905C352A1E454C00B225E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C342A1E454C00B225E7 /* ContentView.swift */; };
 		92905C372A1E454E00B225E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92905C362A1E454E00B225E7 /* Assets.xcassets */; };
 		92905C3A2A1E454E00B225E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92905C392A1E454E00B225E7 /* Preview Assets.xcassets */; };
 		92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C482A1E512E00B225E7 /* HelveticaNeue.swift */; };
@@ -30,10 +29,9 @@
 
 /* Begin PBXFileReference section */
 		92258D5F2A20EA4400653623 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
-		92258D622A20F17B00653623 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		92258D622A20F17B00653623 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		92905C2F2A1E454C00B225E7 /* SilentMoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilentMoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92905C322A1E454C00B225E7 /* SilentMoonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentMoonApp.swift; sourceTree = "<group>"; };
-		92905C342A1E454C00B225E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		92905C362A1E454E00B225E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92905C392A1E454E00B225E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		92905C472A1E4B8B00B225E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -74,9 +72,16 @@
 		92258D612A20F16E00653623 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				92258D622A20F17B00653623 /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		926F39752A22460C0000256B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				92258D622A20F17B00653623 /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		92905C262A1E454C00B225E7 = {
@@ -98,6 +103,7 @@
 		92905C312A1E454C00B225E7 /* SilentMoon */ = {
 			isa = PBXGroup;
 			children = (
+				926F39752A22460C0000256B /* Main */,
 				92258D612A20F16E00653623 /* Home */,
 				92258D5E2A20EA2A00653623 /* TabBar */,
 				929B88152A1F61F9004FDB23 /* ViewModifiers */,
@@ -107,7 +113,6 @@
 				92905C472A1E4B8B00B225E7 /* Info.plist */,
 				92905C402A1E49CE00B225E7 /* Fonts */,
 				92905C322A1E454C00B225E7 /* SilentMoonApp.swift */,
-				92905C342A1E454C00B225E7 /* ContentView.swift */,
 				92905C362A1E454E00B225E7 /* Assets.xcassets */,
 				92905C382A1E454E00B225E7 /* Preview Content */,
 			);
@@ -244,13 +249,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				92905C4C2A1E74F300B225E7 /* StarterView.swift in Sources */,
-				92258D632A20F17B00653623 /* HomeView.swift in Sources */,
+				92258D632A20F17B00653623 /* MainView.swift in Sources */,
 				929B880E2A1F4BCD004FDB23 /* SignInView.swift in Sources */,
 				92986DA52A1F9BBA0077E622 /* RemindersView.swift in Sources */,
 				92258D602A20EA4400653623 /* CustomTabBar.swift in Sources */,
 				92905C4F2A1E797B00B225E7 /* Colors.swift in Sources */,
 				929B88172A1F6216004FDB23 /* ViewModifiers.swift in Sources */,
-				92905C352A1E454C00B225E7 /* ContentView.swift in Sources */,
 				92986DA12A1F7E080077E622 /* WelcomeView.swift in Sources */,
 				92986DA72A1FA0290077E622 /* CustomDayPicker.swift in Sources */,
 				92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */,

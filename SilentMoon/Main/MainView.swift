@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct MainView: View {
   @State var selectedTab: Tab = .home
   
   init() {
@@ -19,12 +19,16 @@ struct HomeView: View {
         
         VStack {
           TabView(selection: $selectedTab) {
-            ForEach(Tab.allCases, id: \.rawValue) { tab in
-              HStack {
-                Text(tab.rawValue)
-              }
-              .tag(tab)
-            }
+            Text("Home")
+              .tag(Tab.home)
+            Text("Sleep")
+              .tag(Tab.sleep)
+            Text("Meditate")
+              .tag(Tab.meditateTab)
+            Text("Music")
+              .tag(Tab.music)
+            Text("Profile")
+              .tag(Tab.profile)
           }
         }
         
@@ -36,8 +40,8 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+      MainView()
     }
 }
