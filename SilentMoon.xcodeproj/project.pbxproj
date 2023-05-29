@@ -27,6 +27,9 @@
 		929B88172A1F6216004FDB23 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B88162A1F6216004FDB23 /* ViewModifiers.swift */; };
 		929B88192A1F728A004FDB23 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B88182A1F728A004FDB23 /* SignUpView.swift */; };
 		92CFB4F72A23C3D6006AB216 /* ChooseTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CFB4F62A23C3D6006AB216 /* ChooseTopicView.swift */; };
+		92F51B9F2A249D40004E3AD6 /* Otjanbird-Pt.-I.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92F51B9D2A249D3F004E3AD6 /* Otjanbird-Pt.-I.mp3 */; };
+		92F51BA02A249D40004E3AD6 /* storm-clouds-purpple-cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92F51B9E2A249D40004E3AD6 /* storm-clouds-purpple-cat.mp3 */; };
+		92F51BA32A249D9A004E3AD6 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F51BA22A249D9A004E3AD6 /* MusicPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		929B88162A1F6216004FDB23 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		929B88182A1F728A004FDB23 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		92CFB4F62A23C3D6006AB216 /* ChooseTopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicView.swift; sourceTree = "<group>"; };
+		92F51B9D2A249D3F004E3AD6 /* Otjanbird-Pt.-I.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Otjanbird-Pt.-I.mp3"; sourceTree = "<group>"; };
+		92F51B9E2A249D40004E3AD6 /* storm-clouds-purpple-cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "storm-clouds-purpple-cat.mp3"; sourceTree = "<group>"; };
+		92F51BA22A249D9A004E3AD6 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,7 @@
 		92905C312A1E454C00B225E7 /* SilentMoon */ = {
 			isa = PBXGroup;
 			children = (
+				92F51BA12A249D6B004E3AD6 /* Meditate */,
 				926F39752A22460C0000256B /* Main */,
 				92258D612A20F16E00653623 /* Home */,
 				92258D5E2A20EA2A00653623 /* TabBar */,
@@ -119,6 +126,8 @@
 				92905C402A1E49CE00B225E7 /* Fonts */,
 				92905C322A1E454C00B225E7 /* SilentMoonApp.swift */,
 				92905C362A1E454E00B225E7 /* Assets.xcassets */,
+				92F51B9D2A249D3F004E3AD6 /* Otjanbird-Pt.-I.mp3 */,
+				92F51B9E2A249D40004E3AD6 /* storm-clouds-purpple-cat.mp3 */,
 				92905C382A1E454E00B225E7 /* Preview Content */,
 			);
 			path = SilentMoon;
@@ -181,6 +190,14 @@
 			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
+		92F51BA12A249D6B004E3AD6 /* Meditate */ = {
+			isa = PBXGroup;
+			children = (
+				92F51BA22A249D9A004E3AD6 /* MusicPlayer.swift */,
+			);
+			path = Meditate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,7 +258,9 @@
 			files = (
 				92905C3A2A1E454E00B225E7 /* Preview Assets.xcassets in Resources */,
 				929B88102A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf in Resources */,
+				92F51BA02A249D40004E3AD6 /* storm-clouds-purpple-cat.mp3 in Resources */,
 				92905C372A1E454E00B225E7 /* Assets.xcassets in Resources */,
+				92F51B9F2A249D40004E3AD6 /* Otjanbird-Pt.-I.mp3 in Resources */,
 				929B88132A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf in Resources */,
 				929B88142A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf in Resources */,
 			);
@@ -264,6 +283,7 @@
 				929B88172A1F6216004FDB23 /* ViewModifiers.swift in Sources */,
 				92986DA12A1F7E080077E622 /* WelcomeView.swift in Sources */,
 				92986DA72A1FA0290077E622 /* CustomDayPicker.swift in Sources */,
+				92F51BA32A249D9A004E3AD6 /* MusicPlayer.swift in Sources */,
 				92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */,
 				92905C332A1E454C00B225E7 /* SilentMoonApp.swift in Sources */,
 				929B88192A1F728A004FDB23 /* SignUpView.swift in Sources */,
