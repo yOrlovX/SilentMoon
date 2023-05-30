@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVKit
+import MediaPlayer
 
 struct MusicPlayer: View {
   
@@ -16,112 +17,132 @@ struct MusicPlayer: View {
   @State var playing: Bool = false
   @State var width: CGFloat = 0
   
-    var body: some View {
-      VStack(spacing: 20) {
-        Image(uiImage: self.data.count == 0 ? UIImage(systemName: "music.quarternote.3")! : UIImage(data: self.data)!)
-          .resizable()
-          .scaledToFit()
-          .frame(width: 300, height: 300)
-          .cornerRadius(15)
+  var body: some View {
+    VStack(spacing: 20) {
+      Image(uiImage: self.data.count == 0 ? UIImage(systemName: "music.quarternote.3")! : UIImage(data: self.data)!)
+        .resizable()
+        .scaledToFit()
+        .frame(width: 300, height: 300)
+        .cornerRadius(15)
+      
+      Text(self.title)
+        .font(.custom(HelveticaNeue.bold, size: 34))
+      
+      ZStack(alignment: .leading) {
         
-        Text(self.title)
-          .font(.custom(HelveticaNeue.bold, size: 34))
+        Capsule()
+          .fill(.black.opacity(0.08))
+          .frame(height: 2)
         
-        ZStack(alignment: .leading) {
-          
-          Capsule()
-            .fill(.black.opacity(0.08))
-            .frame(height: 2)
-          
-          Capsule()
-            .fill(.black)
-            .frame(width: self.width, height: 2)
-        }
-        .padding()
-        
-        HStack(spacing: 40) {
-          Button(action: {}) {
-            Image(systemName: "backward.fill")
-              .renderingMode(.template)
-              .resizable()
-              .foregroundColor(.black)
-              .scaledToFit()
-              .frame(width: 40, height: 40)
-          }
-          Button(action: {
-            self.player.currentTime -= 15
-          }) {
-            Image(systemName: "gobackward.15")
-              .renderingMode(.template)
-              .resizable()
-              .foregroundColor(.black)
-              .scaledToFit()
-              .frame(width: 40, height: 40)
-          }
-          Button(action: {
-            
-            if self.player.isPlaying {
-              self.player.pause()
-              self.playing = false
-            } else {
-              self.player.play()
-              self.playing = true
-            }
-            
-          }) {
-            Image(systemName: self.playing ? "pause.fill" : "play.fill")
-              .renderingMode(.template)
-              .resizable()
-              .foregroundColor(.black)
-              .scaledToFit()
-              .frame(width: 25, height: 25)
-              .overlay {
-                Circle()
-                  .stroke(.gray.opacity(0.6), lineWidth: 1)
-                  .frame(width: 80, height: 80)
-              }
-          }
-          
-          Button(action: {
-            let increase = self.player.currentTime + 15
-            if increase < self.player.duration {
-              self.player.currentTime = increase
-            }
-          }) {
-            Image(systemName: "goforward.15")
-              .renderingMode(.template)
-              .resizable()
-              .foregroundColor(.black)
-              .scaledToFit()
-              .frame(width: 40, height: 40)
-          }
-          Button(action: {}) {
-            Image(systemName: "forward.fill")
-              .renderingMode(.template)
-              .resizable()
-              .foregroundColor(.black)
-              .scaledToFit()
-              .frame(width: 40, height: 40)
-          }
-        }
+        Capsule()
+          .fill(.black)
+          .frame(width: self.width, height: 2)
       }
-      .onAppear {
-        let url = Bundle.main.path(forResource: "storm-clouds-purpple-cat", ofType: "mp3")
-        
-        self.player = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: url!))
-        self.player.prepareToPlay()
-        self.getData()
-        
-        Timer
-          .scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            if self.player.isPlaying {
-              let screen = UIScreen.main.bounds.width - 30
-              let value = self.player.currentTime / self.player.duration
-              self.width = screen * CGFloat(value)
-            }
+      .padding()
+      
+      HStack(spacing: 40) {
+        Button(action: {}) {
+          Image(systemName: "backward.fill")
+            .renderingMode(.template)
+            .resizable()
+            .foregroundColor(.black)
+            .scaledToFit()
+            .frame(width: 40, height: 40)
+        }
+        Button(action: {
+          self.player.currentTime -= 15
+        }) {
+          Image(systemName: "gobackward.15")
+            .renderingMode(.template)
+            .resizable()
+            .foregroundColor(.black)
+            .scaledToFit()
+            .frame(width: 40, height: 40)
+        }
+        Button(action: {
+          
+          if self.player.isPlaying {
+            self.player.pause()
+            self.playing = false
+          } else {
+            self.player.play()
+            self.playing = true
           }
+          
+        }) {
+          Image(systemName: self.playing ? "pause.fill" : "play.fill")
+            .renderingMode(.template)
+            .resizable()
+            .foregroundColor(.black)
+            .scaledToFit()
+            .frame(width: 25, height: 25)
+            .overlay {
+              Circle()
+                .stroke(.gray.opacity(0.6), lineWidth: 1)
+                .frame(width: 80, height: 80)
+            }
+        }
+        
+        Button(action: {
+          let increase = self.player.currentTime + 15
+          if increase < self.player.duration {
+            self.player.currentTime = increase
+          }
+        }) {
+          Image(systemName: "goforward.15")
+            .renderingMode(.template)
+            .resizable()
+            .foregroundColor(.black)
+            .scaledToFit()
+            .frame(width: 40, height: 40)
+        }
+        Button(action: {}) {
+          Image(systemName: "forward.fill")
+            .renderingMode(.template)
+            .resizable()
+            .foregroundColor(.black)
+            .scaledToFit()
+            .frame(width: 40, height: 40)
+        }
       }
     }
+    .onAppear {
+      let url = Bundle.main.path(forResource: "storm-clouds-purpple-cat", ofType: "mp3")
+      
+      self.player = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: url!))
+      self.player.prepareToPlay()
+      self.getData()
+      
+      Timer
+        .scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+          if self.player.isPlaying {
+            let screen = UIScreen.main.bounds.width - 30
+            let value = self.player.currentTime / self.player.duration
+            self.width = screen * CGFloat(value)
+          }
+        }
+      
+      do {
+        try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+        try AVAudioSession.sharedInstance().setActive(true)
+      } catch {
+        print("Failed to configure audio session:", error.localizedDescription)
+      }
+      
+      UIApplication.shared.beginReceivingRemoteControlEvents()
+      MPRemoteCommandCenter.shared().playCommand.addTarget { _ in
+        self.player.play()
+        return .success
+      }
+      MPRemoteCommandCenter.shared().pauseCommand.addTarget { _ in
+        self.player.pause()
+        return .success
+      }
+    }
+    .onDisappear {
+      UIApplication.shared.endReceivingRemoteControlEvents()
+    }
+  }
   
   func getData() {
     
