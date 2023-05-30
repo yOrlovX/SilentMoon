@@ -35,7 +35,7 @@ struct MusicPlayer: View {
           
           Capsule()
             .fill(.black)
-            .frame(width: 200, height: 2)
+            .frame(width: self.width, height: 2)
         }
         .padding()
         
@@ -48,7 +48,9 @@ struct MusicPlayer: View {
               .scaledToFit()
               .frame(width: 40, height: 40)
           }
-          Button(action: {}) {
+          Button(action: {
+            self.player.currentTime -= 15
+          }) {
             Image(systemName: "gobackward.15")
               .renderingMode(.template)
               .resizable()
@@ -80,8 +82,13 @@ struct MusicPlayer: View {
               }
           }
           
-          Button(action: {}) {
-            Image(systemName: "gobackward.15")
+          Button(action: {
+            let increase = self.player.currentTime + 15
+            if increase < self.player.duration {
+              self.player.currentTime = increase
+            }
+          }) {
+            Image(systemName: "goforward.15")
               .renderingMode(.template)
               .resizable()
               .foregroundColor(.black)
@@ -108,7 +115,9 @@ struct MusicPlayer: View {
         Timer
           .scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             if self.player.isPlaying {
-              
+              let screen = UIScreen.main.bounds.width - 30
+              let value = self.player.currentTime / self.player.duration
+              self.width = screen * CGFloat(value)
             }
           }
       }
@@ -132,8 +141,8 @@ struct MusicPlayer: View {
   
 }
 
-struct MusicPlayer_Previews: PreviewProvider {
-    static var previews: some View {
-        MusicPlayer()
-    }
-}
+//struct MusicPlayer_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MusicPlayer()
+//    }
+//}
