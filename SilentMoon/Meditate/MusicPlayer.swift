@@ -122,6 +122,7 @@ struct MusicPlayer: View {
           }
         }
       
+      // MARK: Play song when phone screen locked
       do {
         try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
         try AVAudioSession.sharedInstance().setActive(true)
@@ -139,6 +140,7 @@ struct MusicPlayer: View {
         return .success
       }
     }
+    // MARK: Play song when phone screen locked
     .onDisappear {
       UIApplication.shared.endReceivingRemoteControlEvents()
     }
