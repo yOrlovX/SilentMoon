@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MainView: View {
+  
+  let player = AVAudioPlayer()
   @State var selectedTab: Tab = .home
   
   init() {
@@ -18,17 +21,19 @@ struct MainView: View {
       ZStack {
         
         VStack {
-          TabView(selection: $selectedTab) {
-            Text("Home")
-              .tag(Tab.home)
-            Text("Sleep")
-              .tag(Tab.sleep)
-            Text("Meditate")
-              .tag(Tab.meditateTab)
-            Text("Music")
-              .tag(Tab.music)
-            Text("Profile")
-              .tag(Tab.profile)
+          VStack {
+            TabView(selection: $selectedTab) {
+              Text("Home")
+                .tag(Tab.home)
+              Text("Sleep")
+                .tag(Tab.sleep)
+              Text("Meditate")
+                .tag(Tab.meditateTab)
+              MusicPlayer(player: player)
+                .tag(Tab.music)
+              Text("Profile")
+                .tag(Tab.profile)
+            }
           }
         }
         

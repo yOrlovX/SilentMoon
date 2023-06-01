@@ -9,23 +9,27 @@ import SwiftUI
 
 struct WelcomeView: View {
   var body: some View {
-    ZStack {
-      Colors.purpleBg
-        .ignoresSafeArea()
-      VStack(spacing: 40) {
-        logoContainer
-        Spacer()
-        textContainer
-        Spacer()
-        Image("meditate")
-          .resizable()
-          .scaledToFit()
-        Button(action: {}) {
-          Text("GET STARTED")
+    NavigationView {
+      ZStack {
+        Colors.purpleBg
+          .ignoresSafeArea()
+        VStack(spacing: 40) {
+          logoContainer
+          Spacer()
+          textContainer
+          Spacer()
+          Image("meditate")
+            .resizable()
+            .scaledToFit()
+          NavigationLink(destination: ChooseTopicView()) {
+            Text("GET STARTED")
+          }
+          .modifier(GrayButtonModifier())
+          Spacer()
         }
-        .modifier(GrayButtonModifier())
-        Spacer()
       }
+      .background(.ultraThinMaterial)
+      .navigationBarHidden(true)
     }
   }
 }

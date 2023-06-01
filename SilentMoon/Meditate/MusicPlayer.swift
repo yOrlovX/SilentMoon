@@ -8,6 +8,7 @@
 import SwiftUI
 import AVKit
 import MediaPlayer
+import Foundation
 
 struct MusicPlayer: View {
   
@@ -16,6 +17,7 @@ struct MusicPlayer: View {
   @State var player: AVAudioPlayer!
   @State var playing: Bool = false
   @State var width: CGFloat = 0
+  @State var currentTime: TimeInterval = 0
   
   var body: some View {
     VStack(spacing: 20) {
@@ -27,6 +29,9 @@ struct MusicPlayer: View {
       
       Text(self.title)
         .font(.custom(HelveticaNeue.bold, size: 34))
+      
+      Text("\(formatTimeInterval(currentTime))")
+        .font(.custom(HelveticaNeue.light, size: 16))
       
       ZStack(alignment: .leading) {
         
@@ -49,9 +54,7 @@ struct MusicPlayer: View {
             .scaledToFit()
             .frame(width: 40, height: 40)
         }
-        Button(action: {
-          self.player.currentTime -= 15
-        }) {
+        Button(action: { reduce15Seconds() }) {
           Image(systemName: "gobackward.15")
             .renderingMode(.template)
             .resizable()
@@ -59,17 +62,7 @@ struct MusicPlayer: View {
             .scaledToFit()
             .frame(width: 40, height: 40)
         }
-        Button(action: {
-          
-          if self.player.isPlaying {
-            self.player.pause()
-            self.playing = false
-          } else {
-            self.player.play()
-            self.playing = true
-          }
-          
-        }) {
+        Button(action: { playPause() }) {
           Image(systemName: self.playing ? "pause.fill" : "play.fill")
             .renderingMode(.template)
             .resizable()
@@ -83,12 +76,7 @@ struct MusicPlayer: View {
             }
         }
         
-        Button(action: {
-          let increase = self.player.currentTime + 15
-          if increase < self.player.duration {
-            self.player.currentTime = increase
-          }
-        }) {
+        Button(action: { increase15Seconds() }) {
           Image(systemName: "goforward.15")
             .renderingMode(.template)
             .resizable()
@@ -107,38 +95,11 @@ struct MusicPlayer: View {
       }
     }
     .onAppear {
-      let url = Bundle.main.path(forResource: "storm-clouds-purpple-cat", ofType: "mp3")
-      
-      self.player = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: url!))
-      self.player.prepareToPlay()
+      getUrlToPlay()
       self.getData()
-      
-      Timer
-        .scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-          if self.player.isPlaying {
-            let screen = UIScreen.main.bounds.width - 30
-            let value = self.player.currentTime / self.player.duration
-            self.width = screen * CGFloat(value)
-          }
-        }
-      
+      getCurrentTrackTimeAndProgress()
       // MARK: Play song when phone screen locked
-      do {
-        try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-        try AVAudioSession.sharedInstance().setActive(true)
-      } catch {
-        print("Failed to configure audio session:", error.localizedDescription)
-      }
-      
-      UIApplication.shared.beginReceivingRemoteControlEvents()
-      MPRemoteCommandCenter.shared().playCommand.addTarget { _ in
-        self.player.play()
-        return .success
-      }
-      MPRemoteCommandCenter.shared().pauseCommand.addTarget { _ in
-        self.player.pause()
-        return .success
-      }
+      backgroundPlaying()
     }
     // MARK: Play song when phone screen locked
     .onDisappear {
@@ -147,7 +108,6 @@ struct MusicPlayer: View {
   }
   
   func getData() {
-    
     let asset = AVAsset(url: self.player.url!)
     
     for i in asset.commonMetadata {
@@ -161,11 +121,81 @@ struct MusicPlayer: View {
       }
     }
   }
-  
 }
 
-//struct MusicPlayer_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MusicPlayer()
-//    }
-//}
+extension MusicPlayer {
+  
+  func playPause() {
+    if self.player.isPlaying {
+      self.player.pause()
+      self.playing = false
+    } else {
+      self.player.play()
+      self.playing = true
+    }
+  }
+  
+  func increase15Seconds() {
+    let increase = self.player.currentTime + 15
+    if increase < self.player.duration {
+      self.player.currentTime = increase
+    }
+  }
+  
+  func reduce15Seconds() {
+    self.player.currentTime -= 15
+  }
+  
+  func backgroundPlaying() {
+    do {
+      try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+      try AVAudioSession.sharedInstance().setActive(true)
+    } catch {
+      print("Failed to configure audio session:", error.localizedDescription)
+    }
+    
+    UIApplication.shared.beginReceivingRemoteControlEvents()
+    MPRemoteCommandCenter.shared().playCommand.addTarget { _ in
+      self.player.play()
+      return .success
+    }
+    MPRemoteCommandCenter.shared().pauseCommand.addTarget { _ in
+      self.player.pause()
+      return .success
+    }
+  }
+  
+  func getCurrentTrackTimeAndProgress() {
+    Timer
+      .scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+        if self.player.isPlaying {
+          let screen = UIScreen.main.bounds.width - 30
+          let value = self.player.currentTime / self.player.duration
+          self.width = screen * CGFloat(value)
+        }
+        
+        DispatchQueue.main.async {
+          self.currentTime = self.player.currentTime
+        }
+      }
+  }
+  
+  func getUrlToPlay() {
+    guard let url = Bundle.main.path(forResource: "storm-clouds-purpple-cat", ofType: "mp3") else { return }
+    
+    self.player = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: url))
+    self.player.prepareToPlay()
+  }
+  
+  func formatTimeInterval(_ interval: TimeInterval) -> String {
+    let minutes = Int(interval / 60)
+    let seconds = Int(interval.truncatingRemainder(dividingBy: 60))
+    return String(format: "%02d:%02d", minutes, seconds)
+  }
+}
+
+struct MusicPlayer_Previews: PreviewProvider {
+    static var previews: some View {
+        MusicPlayer()
+    }
+}
