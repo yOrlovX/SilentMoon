@@ -8,6 +8,7 @@
 import Foundation
 import AVKit
 import SwiftUI
+import MediaPlayer
 
 final class AudioManager: ObservableObject {
   
@@ -25,7 +26,7 @@ final class AudioManager: ObservableObject {
     guard let url = Bundle.main.url(forResource: track, withExtension: "mp3") else { return }
     
     do {
-      try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+      try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
       try AVAudioSession.sharedInstance().setActive(true)
       player = try AVAudioPlayer(contentsOf: url)
       
@@ -54,8 +55,22 @@ final class AudioManager: ObservableObject {
     player.currentTime += 15
   }
   
-    func reduce15Seconds() {
-      guard let player = player else { return }
-      player.currentTime -= 15
+  func reduce15Seconds() {
+    guard let player = player else { return }
+    player.currentTime -= 15
+  }
+  
+  func backgroundPlaying() {
+    guard let player = player else { return }
+    UIApplication.shared.beginReceivingRemoteControlEvents()
+    MPRemoteCommandCenter.shared().playCommand.addTarget { _ in
+      player.play()
+      return .success
     }
+    MPRemoteCommandCenter.shared().pauseCommand.addTarget { _ in
+      player.pause()
+      return .success
+    }
+  }
+  
 }

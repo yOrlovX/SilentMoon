@@ -7,26 +7,24 @@
 
 import SwiftUI
 import AVKit
-import MediaPlayer
 import Foundation
 
 struct MusicPlayer: View {
   
   let audioManager = AudioManager.shared
-  @StateObject var songsViewModel = SongsViewModel()
   var song = Song.songsData
+  
+  @StateObject var songsViewModel = SongsViewModel()
+  
   @State var isPlaying: Bool = false
   @State var value: Double = 0.0
   @State var isEditing: Bool = false
-  
   @State var data: Data = .init(count: 0)
   @State var title = ""
   
   let timer = Timer
     .publish(every: 1, on: .main, in: .common)
     .autoconnect()
-  
-  @State var currentTime: TimeInterval = 0
   
   var body: some View {
     VStack(spacing: 20) {
@@ -88,8 +86,6 @@ struct MusicPlayer: View {
     .onAppear {
       audioManager.startPlayer(track: song.fileName)
       self.getData()
-      // MARK: Play song when phone screen locked
-//      backgroundPlaying()
     }
     .onReceive(timer, perform: { _ in
       guard let player = audioManager.player, !isEditing else { return }
@@ -97,7 +93,7 @@ struct MusicPlayer: View {
     })
     // MARK: Play song when phone screen locked
     .onDisappear {
-      UIApplication.shared.endReceivingRemoteControlEvents()
+      //      UIApplication.shared.endReceivingRemoteControlEvents()
     }
   }
   
@@ -119,32 +115,13 @@ struct MusicPlayer: View {
 }
 
 extension MusicPlayer {
-    
-    //  func backgroundPlaying() {
-    //    do {
-    //      try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-    //      try AVAudioSession.sharedInstance().setActive(true)
-    //    } catch {
-    //      print("Failed to configure audio session:", error.localizedDescription)
-    //    }
-    //
-    //    UIApplication.shared.beginReceivingRemoteControlEvents()
-    //    MPRemoteCommandCenter.shared().playCommand.addTarget { _ in
-    //      self.player.play()
-    //      return .success
-    //    }
-    //    MPRemoteCommandCenter.shared().pauseCommand.addTarget { _ in
-    //      self.player.pause()
-    //      return .success
-    //    }
-    //  }
-      
-    func formatTimeInterval(_ interval: TimeInterval) -> String {
-      let minutes = Int(interval / 60)
-      let seconds = Int(interval.truncatingRemainder(dividingBy: 60))
-      return String(format: "%02d:%02d", minutes, seconds)
-    }
+  
+  func formatTimeInterval(_ interval: TimeInterval) -> String {
+    let minutes = Int(interval / 60)
+    let seconds = Int(interval.truncatingRemainder(dividingBy: 60))
+    return String(format: "%02d:%02d", minutes, seconds)
   }
+}
 
 //  struct MusicPlayer_Previews: PreviewProvider {
 //      static var previews: some View {
