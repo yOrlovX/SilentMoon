@@ -55,57 +55,33 @@ struct MusicPlayer: View {
             Text("\(formatTimeInterval(player.duration - player.currentTime))")
           }
         }
+        .accentColor(.black)
         .padding()
       }
       
       HStack(spacing: 40) {
         Button(action: {}) {
           Image(systemName: "backward.fill")
-            .renderingMode(.template)
-            .resizable()
-            .foregroundColor(.black)
-            .scaledToFit()
-            .frame(width: 40, height: 40)
+            .playerButtonModifier()
         }
         Button(action: { audioManager.reduce15Seconds() }) {
           Image(systemName: "gobackward.15")
-            .renderingMode(.template)
-            .resizable()
-            .foregroundColor(.black)
-            .scaledToFit()
-            .frame(width: 40, height: 40)
+            .playerButtonModifier()
         }
         Button(action: { isPlaying.toggle()
           audioManager.playPause()
         }) {
           Image(systemName: self.isPlaying ? "pause.fill" : "play.fill")
-            .renderingMode(.template)
-            .resizable()
-            .foregroundColor(.black)
-            .scaledToFit()
-            .frame(width: 25, height: 25)
-            .overlay {
-              Circle()
-                .stroke(.gray.opacity(0.6), lineWidth: 1)
-                .frame(width: 80, height: 80)
-            }
+            .playPauseButtonModifier()
         }
         
         Button(action: { audioManager.increase15Seconds() }) {
           Image(systemName: "goforward.15")
-            .renderingMode(.template)
-            .resizable()
-            .foregroundColor(.black)
-            .scaledToFit()
-            .frame(width: 40, height: 40)
+            .playerButtonModifier()
         }
         Button(action: {}) {
           Image(systemName: "forward.fill")
-            .renderingMode(.template)
-            .resizable()
-            .foregroundColor(.black)
-            .scaledToFit()
-            .frame(width: 40, height: 40)
+            .playerButtonModifier()
         }
       }
     }
