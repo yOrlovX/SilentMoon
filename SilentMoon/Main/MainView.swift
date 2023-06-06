@@ -29,7 +29,7 @@ struct MainView: View {
                 .tag(Tab.sleep)
               Text("Meditate")
                 .tag(Tab.meditateTab)
-              MusicPlayer(player: player)
+              MusicPlayer()
                 .tag(Tab.music)
               Text("Profile")
                 .tag(Tab.profile)

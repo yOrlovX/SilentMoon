@@ -12,11 +12,20 @@ import Foundation
 
 struct MusicPlayer: View {
   
+  let audioManager = AudioManager.shared
+  @StateObject var songsViewModel = SongsViewModel()
+  var song = Song.songsData
+  @State var isPlaying: Bool = false
+  @State var value: Double = 0.0
+  @State var isEditing: Bool = false
+  
   @State var data: Data = .init(count: 0)
   @State var title = ""
-  @State var player: AVAudioPlayer!
-  @State var playing: Bool = false
-  @State var width: CGFloat = 0
+  
+  let timer = Timer
+    .publish(every: 1, on: .main, in: .common)
+    .autoconnect()
+  
   @State var currentTime: TimeInterval = 0
   
   var body: some View {
@@ -30,20 +39,24 @@ struct MusicPlayer: View {
       Text(self.title)
         .font(.custom(HelveticaNeue.bold, size: 34))
       
-      Text("\(formatTimeInterval(currentTime))")
+      Text("\(formatTimeInterval(audioManager.player?.currentTime ?? 0.0))")
         .font(.custom(HelveticaNeue.light, size: 16))
       
-      ZStack(alignment: .leading) {
-        
-        Capsule()
-          .fill(.black.opacity(0.08))
-          .frame(height: 2)
-        
-        Capsule()
-          .fill(.black)
-          .frame(width: self.width, height: 2)
+      if let player = audioManager.player {
+        VStack(spacing: 5) {
+          Slider(value: $value, in: 0...player.duration) { editing in
+            if !editing {
+              player.currentTime = value
+            }
+          }
+          HStack {
+            Text("\(formatTimeInterval(player.currentTime))")
+            Spacer()
+            Text("\(formatTimeInterval(player.duration - player.currentTime))")
+          }
+        }
+        .padding()
       }
-      .padding()
       
       HStack(spacing: 40) {
         Button(action: {}) {
@@ -54,7 +67,7 @@ struct MusicPlayer: View {
             .scaledToFit()
             .frame(width: 40, height: 40)
         }
-        Button(action: { reduce15Seconds() }) {
+        Button(action: { audioManager.reduce15Seconds() }) {
           Image(systemName: "gobackward.15")
             .renderingMode(.template)
             .resizable()
@@ -62,8 +75,10 @@ struct MusicPlayer: View {
             .scaledToFit()
             .frame(width: 40, height: 40)
         }
-        Button(action: { playPause() }) {
-          Image(systemName: self.playing ? "pause.fill" : "play.fill")
+        Button(action: { isPlaying.toggle()
+          audioManager.playPause()
+        }) {
+          Image(systemName: self.isPlaying ? "pause.fill" : "play.fill")
             .renderingMode(.template)
             .resizable()
             .foregroundColor(.black)
@@ -76,7 +91,7 @@ struct MusicPlayer: View {
             }
         }
         
-        Button(action: { increase15Seconds() }) {
+        Button(action: { audioManager.increase15Seconds() }) {
           Image(systemName: "goforward.15")
             .renderingMode(.template)
             .resizable()
@@ -95,12 +110,15 @@ struct MusicPlayer: View {
       }
     }
     .onAppear {
-      getUrlToPlay()
+      audioManager.startPlayer(track: song.fileName)
       self.getData()
-      getCurrentTrackTimeAndProgress()
       // MARK: Play song when phone screen locked
-      backgroundPlaying()
+//      backgroundPlaying()
     }
+    .onReceive(timer, perform: { _ in
+      guard let player = audioManager.player, !isEditing else { return }
+      value = player.currentTime
+    })
     // MARK: Play song when phone screen locked
     .onDisappear {
       UIApplication.shared.endReceivingRemoteControlEvents()
@@ -108,7 +126,8 @@ struct MusicPlayer: View {
   }
   
   func getData() {
-    let asset = AVAsset(url: self.player.url!)
+    guard let url = audioManager.player?.url else { return }
+    let asset = AVAsset(url: url)
     
     for i in asset.commonMetadata {
       if i.commonKey?.rawValue == "artwork" {
@@ -124,78 +143,36 @@ struct MusicPlayer: View {
 }
 
 extension MusicPlayer {
-  
-  func playPause() {
-    if self.player.isPlaying {
-      self.player.pause()
-      self.playing = false
-    } else {
-      self.player.play()
-      self.playing = true
-    }
-  }
-  
-  func increase15Seconds() {
-    let increase = self.player.currentTime + 15
-    if increase < self.player.duration {
-      self.player.currentTime = increase
-    }
-  }
-  
-  func reduce15Seconds() {
-    self.player.currentTime -= 15
-  }
-  
-  func backgroundPlaying() {
-    do {
-      try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-      try AVAudioSession.sharedInstance().setActive(true)
-    } catch {
-      print("Failed to configure audio session:", error.localizedDescription)
-    }
     
-    UIApplication.shared.beginReceivingRemoteControlEvents()
-    MPRemoteCommandCenter.shared().playCommand.addTarget { _ in
-      self.player.play()
-      return .success
+    //  func backgroundPlaying() {
+    //    do {
+    //      try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+    //      try AVAudioSession.sharedInstance().setActive(true)
+    //    } catch {
+    //      print("Failed to configure audio session:", error.localizedDescription)
+    //    }
+    //
+    //    UIApplication.shared.beginReceivingRemoteControlEvents()
+    //    MPRemoteCommandCenter.shared().playCommand.addTarget { _ in
+    //      self.player.play()
+    //      return .success
+    //    }
+    //    MPRemoteCommandCenter.shared().pauseCommand.addTarget { _ in
+    //      self.player.pause()
+    //      return .success
+    //    }
+    //  }
+      
+    func formatTimeInterval(_ interval: TimeInterval) -> String {
+      let minutes = Int(interval / 60)
+      let seconds = Int(interval.truncatingRemainder(dividingBy: 60))
+      return String(format: "%02d:%02d", minutes, seconds)
     }
-    MPRemoteCommandCenter.shared().pauseCommand.addTarget { _ in
-      self.player.pause()
-      return .success
-    }
   }
-  
-  func getCurrentTrackTimeAndProgress() {
-    Timer
-      .scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-        if self.player.isPlaying {
-          let screen = UIScreen.main.bounds.width - 30
-          let value = self.player.currentTime / self.player.duration
-          self.width = screen * CGFloat(value)
-        }
-        
-        DispatchQueue.main.async {
-          self.currentTime = self.player.currentTime
-        }
-      }
-  }
-  
-  func getUrlToPlay() {
-    guard let url = Bundle.main.path(forResource: "storm-clouds-purpple-cat", ofType: "mp3") else { return }
-    
-    self.player = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: url))
-    self.player.prepareToPlay()
-  }
-  
-  func formatTimeInterval(_ interval: TimeInterval) -> String {
-    let minutes = Int(interval / 60)
-    let seconds = Int(interval.truncatingRemainder(dividingBy: 60))
-    return String(format: "%02d:%02d", minutes, seconds)
-  }
-}
 
-struct MusicPlayer_Previews: PreviewProvider {
-    static var previews: some View {
-        MusicPlayer()
-    }
-}
+//  struct MusicPlayer_Previews: PreviewProvider {
+//      static var previews: some View {
+//          MusicPlayer()
+//      }
+//  }
+
