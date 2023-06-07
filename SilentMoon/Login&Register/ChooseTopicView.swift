@@ -8,46 +8,64 @@
 import SwiftUI
 
 struct ChooseTopicView: View {
-    var body: some View {
-      VStack(alignment: .leading, spacing: 10) {
-        Text("What Brings you")
-          .font(.custom(HelveticaNeue.medium, size: 28))
-        
-        Text("to Silent Moon?")
-          .font(.custom(HelveticaNeue.light, size: 28))
-        
-        Text("choose a topic to focuse on:")
-          .font(.custom(HelveticaNeue.light, size: 20))
-          .foregroundColor(Colors.grayText)
-        
-        ScrollView(.vertical, showsIndicators: false) {
-          HStack {
+  
+  let columns = [
+    GridItem(.adaptive(minimum: 167), spacing: 20),
+    GridItem(.adaptive(minimum: 167))
+  ]
+  
+  let category = TopicData.data
+  
+  var body: some View {
+    VStack(alignment: .leading, spacing: 10) {
+      Text("What Brings you")
+        .font(.custom(HelveticaNeue.medium, size: 28))
+      
+      Text("to Silent Moon?")
+        .font(.custom(HelveticaNeue.light, size: 28))
+      
+      Text("choose a topic to focuse on:")
+        .font(.custom(HelveticaNeue.light, size: 20))
+        .foregroundColor(Colors.grayText)
+      
+      ScrollView(.vertical, showsIndicators: false) {
+        LazyVGrid(columns: columns, spacing: 20) {
+          ForEach(category, id: \.self) { data in
             VStack {
-              ForEach(1..<9) { _ in
-                Rectangle()
-                  .frame(minWidth: 0, maxWidth: .infinity)
-                  .frame(height: CGFloat.random(in: 167...210))
-                  .frame(minHeight: 167)
-                  .cornerRadius(10)
-              }
-            }
-            VStack {
-              ForEach(1..<9) { _ in
-                Rectangle()
-                  .frame(minWidth: 0, maxWidth: .infinity)
-                  .frame(height: CGFloat.random(in: 167...210))
-                  .cornerRadius(10)
-              }
+              Image(data.image)
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: .infinity)
+                .cornerRadius(10)
+              
+              Text(data.name)
+                .font(.custom(HelveticaNeue.bold, size: 16))
             }
           }
         }
-        .padding()
+        .padding(.top, 30)
       }
     }
+    .padding(.horizontal, 20)
+  }
 }
 
 struct ChooseTopicView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChooseTopicView()
-    }
+  static var previews: some View {
+    ChooseTopicView()
+  }
+}
+
+struct TopicData: Hashable {
+  let image: String
+  let name: String
+  
+  static let data = [TopicData(image: "1", name: "Personal Growth"),
+                     TopicData(image: "2", name: "Reduce Stress"),
+                     TopicData(image: "3", name: "Reduce Anxiety"),
+                     TopicData(image: "4", name: "Better Sleep"),
+                     TopicData(image: "5", name: "Increase Happiness"),
+                     TopicData(image: "6", name: "Improve Performanee"),
+                     
+  ]
 }
