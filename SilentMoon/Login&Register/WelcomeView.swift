@@ -21,7 +21,7 @@ struct WelcomeView: View {
           Image("meditate")
             .resizable()
             .scaledToFit()
-          NavigationLink(destination: ChooseTopicView()) {
+          NavigationLink(destination: StarterView()) {
             Text("GET STARTED")
           }
           .modifier(GrayButtonModifier())
@@ -48,7 +48,7 @@ extension WelcomeView {
   
   private var textContainer: some View {
     VStack(spacing: 10) {
-      Text("Hi Afsar, Welcome")
+      Text("Welcome")
         .font(.custom(HelveticaNeue.bold, size: 30))
         .foregroundColor(.white)
       

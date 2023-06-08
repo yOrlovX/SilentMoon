@@ -16,7 +16,6 @@ struct SignUpView: View {
   
   var body: some View {
     VStack(spacing: 35) {
-      Spacer()
       Text("Create your account")
         .font(.custom(HelveticaNeue.bold, size: 28))
       
@@ -30,7 +29,7 @@ struct SignUpView: View {
       
       loginButtonContainer
     }
-    
+    .navigationBarHidden(true)
   }
 }
 

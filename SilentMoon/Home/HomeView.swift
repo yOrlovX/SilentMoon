@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+  
+  let courses = Course.courseData
+  
     var body: some View {
       VStack {
         logoContainer
@@ -18,6 +21,7 @@ struct HomeView: View {
             .font(.custom(HelveticaNeue.light, size: 20))
             .foregroundColor(Colors.grayText)
         }
+          coursesContainer
       }
     }
 }
@@ -32,10 +36,22 @@ extension HomeView {
         .font(.system(size: 16, weight: .bold))
     }
   }
+  
+  private var coursesContainer: some View {
+    ScrollView(.horizontal, showsIndicators: false) {
+      HStack(spacing: 20) {
+        ForEach(courses, id: \.self) { course in
+          CourseCell(course: course)
+        }
+      }
+    }
+    .frame(height: 210)
+    .padding(.horizontal, 20)
+  }
 }
 
-//struct HomeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomeView()
-//    }
-//}
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
+}

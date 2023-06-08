@@ -27,7 +27,7 @@ struct SignInView: View {
       
       loginButtonContainer
     }
-    
+    .navigationBarHidden(true)
   }
 }
 

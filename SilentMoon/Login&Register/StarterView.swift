@@ -25,6 +25,7 @@ struct StarterView: View {
       Spacer()
     }
     .ignoresSafeArea(edges: .top)
+    .navigationBarHidden(true)
   }
 }
 
@@ -55,15 +56,16 @@ extension StarterView {
   
   private var buttonContainer: some View {
     VStack(spacing: 20) {
-      Button(action: {}) {
+      NavigationLink(destination: SignUpView()) {
         Text("SIGN UP")
           .modifier(PrimaryButtonModifier())
       }
+     
       HStack {
         Text("ALREADY HAVE AN ACCOUNT?")
           .font(.custom(HelveticaNeue.medium, size: 14))
           .foregroundColor(.gray)
-        Button(action: {}) {
+        NavigationLink(destination: SignInView()) {
           Text("LOG IN")
             .font(.custom(HelveticaNeue.medium, size: 14))
             .foregroundColor(.blue)
