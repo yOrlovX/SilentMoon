@@ -22,6 +22,8 @@ struct HomeView: View {
             .foregroundColor(Colors.grayText)
         }
           coursesContainer
+        
+        DailyThoughtView()
       }
     }
 }
