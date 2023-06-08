@@ -72,11 +72,10 @@ extension SignInView {
   
   private var loginButtonContainer: some View {
     VStack(spacing: 20) {
-      Button(action: {}) {
+      NavigationLink(destination: MainView()) {
         Text("LOG IN")
           .modifier(PrimaryButtonModifier())
       }
-      
       Text("Forgot Password?")
         .font(.custom(HelveticaNeue.medium, size: 14))
       Spacer()

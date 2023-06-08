@@ -99,7 +99,7 @@ extension SignUpView {
           .frame(width: 25, height: 25)
         Spacer()
       }
-      Button(action: {}) {
+      NavigationLink(destination: MainView()) {
         Text("GET STARTED")
           .modifier(PrimaryButtonModifier())
       }

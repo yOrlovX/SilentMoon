@@ -13,24 +13,27 @@ struct HomeView: View {
   let recomended = Recomended.recomendedData
   
     var body: some View {
-      VStack(spacing: 20) {
-        logoContainer
-        VStack(alignment: .leading) {
-          VStack(alignment: .leading, spacing: 10) {
-            Text("Good Morning, Afsar")
-              .font(.custom(HelveticaNeue.bold, size: 28))
-            Text("We Wish you have a good day")
-              .font(.custom(HelveticaNeue.light, size: 20))
-              .foregroundColor(Colors.grayText)
+      ScrollView(.vertical) {
+        VStack(spacing: 20) {
+          logoContainer
+          VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 10) {
+              Text("Good Morning")
+                .font(.custom(HelveticaNeue.bold, size: 28))
+              Text("We Wish you have a good day")
+                .font(.custom(HelveticaNeue.light, size: 20))
+                .foregroundColor(Colors.grayText)
+            }
+            .padding(.horizontal, 20)
+              coursesContainer
+            
+            DailyThoughtView()
+              .padding(.leading, 20)
+              .padding(.top, 20)
+            
+            recomendedContainer
           }
-          .padding(.horizontal, 20)
-            coursesContainer
-          
-          DailyThoughtView()
-            .padding(.leading, 20)
-            .padding(.top, 20)
-          
-          recomendedContainer
+          Spacer()
         }
       }
     }
