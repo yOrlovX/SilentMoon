@@ -10,6 +10,7 @@
 		92258D602A20EA4400653623 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92258D5F2A20EA4400653623 /* CustomTabBar.swift */; };
 		92258D632A20F17B00653623 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92258D622A20F17B00653623 /* MainView.swift */; };
 		9264F7862A31CBD700B18FCF /* DailyThoughtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264F7852A31CBD700B18FCF /* DailyThoughtView.swift */; };
+		9264F7882A31D45200B18FCF /* RecomendedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264F7872A31D45200B18FCF /* RecomendedCell.swift */; };
 		926F39772A2246B70000256B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926F39762A2246B70000256B /* HomeView.swift */; };
 		92905C332A1E454C00B225E7 /* SilentMoonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C322A1E454C00B225E7 /* SilentMoonApp.swift */; };
 		92905C372A1E454E00B225E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92905C362A1E454E00B225E7 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		92258D5F2A20EA4400653623 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		92258D622A20F17B00653623 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9264F7852A31CBD700B18FCF /* DailyThoughtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyThoughtView.swift; sourceTree = "<group>"; };
+		9264F7872A31D45200B18FCF /* RecomendedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedCell.swift; sourceTree = "<group>"; };
 		926F39762A2246B70000256B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		92905C2F2A1E454C00B225E7 /* SilentMoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilentMoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92905C322A1E454C00B225E7 /* SilentMoonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentMoonApp.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				926F39762A2246B70000256B /* HomeView.swift */,
 				92BB99EB2A30F88E0076018E /* CourseCell.swift */,
 				9264F7852A31CBD700B18FCF /* DailyThoughtView.swift */,
+				9264F7872A31D45200B18FCF /* RecomendedCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				92FB437D2A2F256F0080F95E /* SongsViewModel.swift in Sources */,
 				92986DA12A1F7E080077E622 /* WelcomeView.swift in Sources */,
 				92986DA72A1FA0290077E622 /* CustomDayPicker.swift in Sources */,
+				9264F7882A31D45200B18FCF /* RecomendedCell.swift in Sources */,
 				92F51BA32A249D9A004E3AD6 /* MusicPlayer.swift in Sources */,
 				92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */,
 				92905C332A1E454C00B225E7 /* SilentMoonApp.swift in Sources */,

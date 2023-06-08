@@ -17,9 +17,11 @@ struct CourseCell: View {
           Text(course.name)
             .font(.custom(HelveticaNeue.bold, size: 18))
             .foregroundColor(.white)
+            .shadow(radius: 20)
           Text(course.description)
             .font(.custom(HelveticaNeue.medium, size: 15))
             .foregroundColor(.white)
+            .shadow(radius: 20)
           Spacer()
           HStack(spacing: 25) {
             Text(course.duration)
