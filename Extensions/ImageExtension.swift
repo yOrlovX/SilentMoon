@@ -12,7 +12,7 @@ extension Image {
     self
       .renderingMode(.template)
       .resizable()
-      .foregroundColor(.black)
+      .foregroundColor(Colors.grayText)
       .scaledToFit()
       .frame(width: 40, height: 40)
   }
@@ -21,7 +21,7 @@ extension Image {
     self
       .renderingMode(.template)
       .resizable()
-      .foregroundColor(.black)
+      .foregroundColor(Colors.grayText)
       .scaledToFit()
       .frame(width: 25, height: 25)
       .overlay {
