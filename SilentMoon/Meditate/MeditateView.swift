@@ -11,6 +11,8 @@ struct MeditateView: View {
   @State private var showPlayer = false
   @State private var selectedImage: String = ""
   @State private var title: String = ""
+  @State private var track: String = ""
+  
   let columns = [
     GridItem(.adaptive(minimum: 167), spacing: 20),
     GridItem(.adaptive(minimum: 167))
@@ -42,6 +44,7 @@ struct MeditateView: View {
                     showPlayer = true
                     selectedImage = data.image
                     title = data.name
+                    track = data.fileName
                   }
                 
                 Text(data.name)
@@ -54,7 +57,7 @@ struct MeditateView: View {
         .padding(.horizontal, 20)
       }
       .fullScreenCover(isPresented: $showPlayer) {
-        PlayerView(selectedImage: $selectedImage, title: $title)
+        PlayerView(selectedImage: $selectedImage, title: $title, selectedTrack: $track)
       }
     }
 }

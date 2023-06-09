@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		92258D602A20EA4400653623 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92258D5F2A20EA4400653623 /* CustomTabBar.swift */; };
 		92258D632A20F17B00653623 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92258D622A20F17B00653623 /* MainView.swift */; };
+		923118B72A335D4C0051D8B4 /* track6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 923118B12A335D490051D8B4 /* track6.mp3 */; };
+		923118B82A335D4C0051D8B4 /* track1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 923118B22A335D4A0051D8B4 /* track1.mp3 */; };
+		923118B92A335D4C0051D8B4 /* track4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 923118B32A335D4A0051D8B4 /* track4.mp3 */; };
+		923118BA2A335D4C0051D8B4 /* track2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 923118B42A335D4B0051D8B4 /* track2.mp3 */; };
+		923118BB2A335D4C0051D8B4 /* track3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 923118B52A335D4B0051D8B4 /* track3.mp3 */; };
+		923118BC2A335D4C0051D8B4 /* track5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 923118B62A335D4C0051D8B4 /* track5.mp3 */; };
 		9264F7862A31CBD700B18FCF /* DailyThoughtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264F7852A31CBD700B18FCF /* DailyThoughtView.swift */; };
 		9264F7882A31D45200B18FCF /* RecomendedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264F7872A31D45200B18FCF /* RecomendedCell.swift */; };
 		9264F78A2A32017A00B18FCF /* MeditateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264F7892A32017A00B18FCF /* MeditateView.swift */; };
@@ -43,6 +49,12 @@
 /* Begin PBXFileReference section */
 		92258D5F2A20EA4400653623 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		92258D622A20F17B00653623 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		923118B12A335D490051D8B4 /* track6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track6.mp3; sourceTree = "<group>"; };
+		923118B22A335D4A0051D8B4 /* track1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track1.mp3; sourceTree = "<group>"; };
+		923118B32A335D4A0051D8B4 /* track4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track4.mp3; sourceTree = "<group>"; };
+		923118B42A335D4B0051D8B4 /* track2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track2.mp3; sourceTree = "<group>"; };
+		923118B52A335D4B0051D8B4 /* track3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track3.mp3; sourceTree = "<group>"; };
+		923118B62A335D4C0051D8B4 /* track5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track5.mp3; sourceTree = "<group>"; };
 		9264F7852A31CBD700B18FCF /* DailyThoughtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyThoughtView.swift; sourceTree = "<group>"; };
 		9264F7872A31D45200B18FCF /* RecomendedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedCell.swift; sourceTree = "<group>"; };
 		9264F7892A32017A00B18FCF /* MeditateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditateView.swift; sourceTree = "<group>"; };
@@ -147,6 +159,12 @@
 				92905C402A1E49CE00B225E7 /* Fonts */,
 				92905C322A1E454C00B225E7 /* SilentMoonApp.swift */,
 				92905C362A1E454E00B225E7 /* Assets.xcassets */,
+				923118B22A335D4A0051D8B4 /* track1.mp3 */,
+				923118B42A335D4B0051D8B4 /* track2.mp3 */,
+				923118B52A335D4B0051D8B4 /* track3.mp3 */,
+				923118B32A335D4A0051D8B4 /* track4.mp3 */,
+				923118B62A335D4C0051D8B4 /* track5.mp3 */,
+				923118B12A335D490051D8B4 /* track6.mp3 */,
 				92F51B9D2A249D3F004E3AD6 /* Otjanbird-Pt.-I.mp3 */,
 				92F51B9E2A249D40004E3AD6 /* storm-clouds-purpple-cat.mp3 */,
 				92905C382A1E454E00B225E7 /* Preview Content */,
@@ -296,12 +314,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				923118BB2A335D4C0051D8B4 /* track3.mp3 in Resources */,
 				92905C3A2A1E454E00B225E7 /* Preview Assets.xcassets in Resources */,
+				923118BA2A335D4C0051D8B4 /* track2.mp3 in Resources */,
 				929B88102A1F4C63004FDB23 /* HelveticaNeueCyr-Bold.ttf in Resources */,
 				92F51BA02A249D40004E3AD6 /* storm-clouds-purpple-cat.mp3 in Resources */,
+				923118B72A335D4C0051D8B4 /* track6.mp3 in Resources */,
 				92905C372A1E454E00B225E7 /* Assets.xcassets in Resources */,
+				923118B82A335D4C0051D8B4 /* track1.mp3 in Resources */,
 				92F51B9F2A249D40004E3AD6 /* Otjanbird-Pt.-I.mp3 in Resources */,
+				923118B92A335D4C0051D8B4 /* track4.mp3 in Resources */,
 				929B88132A1F4D8F004FDB23 /* HelveticaNeueCyr-Light.ttf in Resources */,
+				923118BC2A335D4C0051D8B4 /* track5.mp3 in Resources */,
 				929B88142A1F4D8F004FDB23 /* HelveticaNeueCyr-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

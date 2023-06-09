@@ -22,7 +22,7 @@ final class AudioManager: ObservableObject {
   private init() {
   }
   
-  func startPlayer(track: String) {
+  func startPlayer(track: String, isPreview: Bool = false) {
     guard let url = Bundle.main.url(forResource: track, withExtension: "mp3") else { return }
     
     do {
@@ -30,7 +30,7 @@ final class AudioManager: ObservableObject {
       try AVAudioSession.sharedInstance().setActive(true)
       player = try AVAudioPlayer(contentsOf: url)
       
-      if isPlaying {
+      if isPreview {
         player?.prepareToPlay()
       } else {
         player?.play()
