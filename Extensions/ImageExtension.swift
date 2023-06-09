@@ -12,7 +12,7 @@ extension Image {
     self
       .renderingMode(.template)
       .resizable()
-      .foregroundColor(Colors.grayText)
+      .foregroundColor(.white)
       .scaledToFit()
       .frame(width: 40, height: 40)
   }
@@ -21,12 +21,12 @@ extension Image {
     self
       .renderingMode(.template)
       .resizable()
-      .foregroundColor(Colors.grayText)
+      .foregroundColor(.white)
       .scaledToFit()
       .frame(width: 25, height: 25)
       .overlay {
         Circle()
-          .stroke(.gray.opacity(0.6), lineWidth: 1)
+          .stroke(.white.opacity(0.6), lineWidth: 1)
           .frame(width: 80, height: 80)
       }
   }

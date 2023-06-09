@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MeditateView: View {
-  
+  @State private var showPlayer = false
+  @State private var selectedImage: String = ""
+  @State private var title: String = ""
   let columns = [
     GridItem(.adaptive(minimum: 167), spacing: 20),
     GridItem(.adaptive(minimum: 167))
@@ -36,6 +38,11 @@ struct MeditateView: View {
                   .scaledToFit()
                   .frame(maxWidth: .infinity)
                   .cornerRadius(10)
+                  .onTapGesture {
+                    showPlayer = true
+                    selectedImage = data.image
+                    title = data.name
+                  }
                 
                 Text(data.name)
                   .font(.custom(HelveticaNeue.bold, size: 16))
@@ -45,6 +52,9 @@ struct MeditateView: View {
           .padding(.top, 30)
         }
         .padding(.horizontal, 20)
+      }
+      .fullScreenCover(isPresented: $showPlayer) {
+        PlayerView(selectedImage: $selectedImage, title: $title)
       }
     }
 }

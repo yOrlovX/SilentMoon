@@ -11,7 +11,7 @@ import SwiftUI
 struct SilentMoonApp: App {
     var body: some Scene {
         WindowGroup {
-          PlayerView()
+          MeditateView()
         }
     }
 }

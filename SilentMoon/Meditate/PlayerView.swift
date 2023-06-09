@@ -9,23 +9,29 @@ import SwiftUI
 
 struct PlayerView: View {
   @State var value: Double = 0.0
+  @Environment(\.dismiss) var dismiss
+  @Binding var selectedImage: String
+  @Binding var title: String
   
     var body: some View {
       ZStack {
-        Image("playerBg")
+        Image(selectedImage)
           .resizable()
           .scaledToFill()
-          .blur(radius: 5)
           .ignoresSafeArea()
-          .padding(-20)
           .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        
+        Rectangle()
+          .background(.thinMaterial)
+          .opacity(0.4)
+          .ignoresSafeArea()
         
         VStack(spacing: 50){
 //        MARK: Buttons
           Spacer()
           HStack {
             Spacer()
-            Button(action: {}) {
+            Button(action: { dismiss() }) {
               Image(systemName: "xmark")
                 .frame(width: 30, height: 30)
                 .foregroundColor(.white)
@@ -67,11 +73,8 @@ struct PlayerView: View {
           Spacer()
           Spacer()
           
-          Text("Focus Attention")
+          Text(title)
             .font(.custom(HelveticaNeue.bold, size: 34))
-            .foregroundColor(.white)
-          Text("7 DAYS OF CALM")
-            .font(.custom(HelveticaNeue.medium, size: 14))
             .foregroundColor(.white)
           
           HStack(spacing: 70) {
@@ -113,6 +116,6 @@ struct PlayerView: View {
 
 struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerView()
+      PlayerView(selectedImage: .constant("playerBg"), title: .constant("Focus Attention"))
     }
 }
