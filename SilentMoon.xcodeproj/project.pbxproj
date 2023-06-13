@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9222367C2A3862E500347376 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9222367B2A3862E500347376 /* CourseDetailView.swift */; };
 		92258D602A20EA4400653623 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92258D5F2A20EA4400653623 /* CustomTabBar.swift */; };
 		92258D632A20F17B00653623 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92258D622A20F17B00653623 /* MainView.swift */; };
 		923118B72A335D4C0051D8B4 /* track6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 923118B12A335D490051D8B4 /* track6.mp3 */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9222367B2A3862E500347376 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
 		92258D5F2A20EA4400653623 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		92258D622A20F17B00653623 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		923118B12A335D490051D8B4 /* track6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track6.mp3; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				92BB99EB2A30F88E0076018E /* CourseCell.swift */,
 				9264F7852A31CBD700B18FCF /* DailyThoughtView.swift */,
 				9264F7872A31D45200B18FCF /* RecomendedCell.swift */,
+				9222367B2A3862E500347376 /* CourseDetailView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				92986DA72A1FA0290077E622 /* CustomDayPicker.swift in Sources */,
 				9264F7882A31D45200B18FCF /* RecomendedCell.swift in Sources */,
 				92F51BA32A249D9A004E3AD6 /* MusicPlayer.swift in Sources */,
+				9222367C2A3862E500347376 /* CourseDetailView.swift in Sources */,
 				92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */,
 				92905C332A1E454C00B225E7 /* SilentMoonApp.swift in Sources */,
 				929B88192A1F728A004FDB23 /* SignUpView.swift in Sources */,

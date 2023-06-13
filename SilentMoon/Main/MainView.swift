@@ -23,9 +23,9 @@ struct MainView: View {
           TabView(selection: $selectedTab) {
             HomeView()
               .tag(Tab.home)
-              .navigationBarTitle("")
-              .navigationBarBackButtonHidden(true)
-              .navigationBarHidden(true)
+//              .navigationBarTitle("")
+//              .navigationBarBackButtonHidden(true)
+//              .navigationBarHidden(true)
             WelcomeSleepView()
               .tag(Tab.sleep)
             MeditateView()

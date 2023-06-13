@@ -54,7 +54,9 @@ extension HomeView {
     ScrollView(.horizontal, showsIndicators: false) {
       HStack(spacing: 20) {
         ForEach(courses, id: \.self) { course in
-          CourseCell(course: course)
+          NavigationLink(destination: CourseDetailView(course: course)) {
+            CourseCell(course: course)
+          }
         }
       }
     }
