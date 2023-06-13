@@ -20,6 +20,7 @@
 		9264F78A2A32017A00B18FCF /* MeditateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264F7892A32017A00B18FCF /* MeditateView.swift */; };
 		9264F78C2A32129700B18FCF /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264F78B2A32129700B18FCF /* PlayerView.swift */; };
 		926F39772A2246B70000256B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926F39762A2246B70000256B /* HomeView.swift */; };
+		9289C1022A38617100C2A44E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289C1012A38617100C2A44E /* ProfileView.swift */; };
 		92905C332A1E454C00B225E7 /* SilentMoonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C322A1E454C00B225E7 /* SilentMoonApp.swift */; };
 		92905C372A1E454E00B225E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92905C362A1E454E00B225E7 /* Assets.xcassets */; };
 		92905C3A2A1E454E00B225E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92905C392A1E454E00B225E7 /* Preview Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		9264F7892A32017A00B18FCF /* MeditateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditateView.swift; sourceTree = "<group>"; };
 		9264F78B2A32129700B18FCF /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		926F39762A2246B70000256B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9289C1012A38617100C2A44E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		92905C2F2A1E454C00B225E7 /* SilentMoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilentMoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92905C322A1E454C00B225E7 /* SilentMoonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentMoonApp.swift; sourceTree = "<group>"; };
 		92905C362A1E454E00B225E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,9 +128,18 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		9289C1002A38616200C2A44E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9289C1012A38617100C2A44E /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		92905C262A1E454C00B225E7 = {
 			isa = PBXGroup;
 			children = (
+				9289C1002A38616200C2A44E /* Profile */,
 				92E771442A2F5DDE00DC26C8 /* Extensions */,
 				92FB43792A2F23900080F95E /* Manager */,
 				92905C312A1E454C00B225E7 /* SilentMoon */,
@@ -344,6 +355,7 @@
 				92258D632A20F17B00653623 /* MainView.swift in Sources */,
 				92BB99EC2A30F88E0076018E /* CourseCell.swift in Sources */,
 				9264F7862A31CBD700B18FCF /* DailyThoughtView.swift in Sources */,
+				9289C1022A38617100C2A44E /* ProfileView.swift in Sources */,
 				92FB437B2A2F239F0080F95E /* AudioManager.swift in Sources */,
 				929B880E2A1F4BCD004FDB23 /* SignInView.swift in Sources */,
 				92986DA52A1F9BBA0077E622 /* RemindersView.swift in Sources */,

@@ -30,9 +30,9 @@ struct MainView: View {
               .tag(Tab.sleep)
             MeditateView()
               .tag(Tab.meditateTab)
-            MusicPlayer()
-              .tag(Tab.music)
-            Text("Profile")
+//            MusicPlayer()
+//              .tag(Tab.music)
+            ProfileView()
               .tag(Tab.profile)
           }
         }
