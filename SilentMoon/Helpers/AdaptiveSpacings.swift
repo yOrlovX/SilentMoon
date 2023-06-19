@@ -17,3 +17,14 @@ struct SignUpViewAdaptiveSpacing {
     }
   }
 }
+
+struct RemindersViewAdaptiveSpacing {
+  
+ static var spacing: CGFloat {
+    if UIScreen.main.bounds.height > 667 {
+      return 40
+    } else {
+      return 10
+    }
+  }
+}

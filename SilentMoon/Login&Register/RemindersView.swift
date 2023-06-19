@@ -13,7 +13,7 @@ struct RemindersView: View {
   @StateObject private var notificationManager = NotificationManager()
   
   var body: some View {
-    VStack(alignment: .leading, spacing: 40) {
+    VStack(spacing: RemindersViewAdaptiveSpacing.spacing) {
       headerTextSection
       DatePicker("", selection: $selectedTime, displayedComponents: .hourAndMinute)
         .labelsHidden()
