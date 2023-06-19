@@ -18,15 +18,8 @@ struct ChooseTopicView: View {
   
   var body: some View {
     VStack(alignment: .leading, spacing: 10) {
-      Text("What Brings you")
-        .font(.custom(HelveticaNeue.medium, size: 28))
       
-      Text("to Silent Moon?")
-        .font(.custom(HelveticaNeue.light, size: 28))
-      
-      Text("choose a topic to focuse on:")
-        .font(.custom(HelveticaNeue.light, size: 20))
-        .foregroundColor(Colors.grayText)
+      textsContainer
       
       ScrollView(.vertical, showsIndicators: false) {
         LazyVGrid(columns: columns, spacing: 20) {
@@ -46,8 +39,23 @@ struct ChooseTopicView: View {
         .padding(.top, 30)
       }
     }
+    .padding(.top, 20)
     .padding(.horizontal, 20)
     .navigationBarHidden(true)
+  }
+}
+
+extension ChooseTopicView {
+  private var textsContainer: some View {
+    VStack(alignment: .leading, spacing: 10) {
+      Text("What Brings you")
+        .font(.custom(HelveticaNeue.medium, size: 28))
+      Text("to Silent Moon?")
+        .font(.custom(HelveticaNeue.light, size: 28))
+      Text("choose a topic to focuse on:")
+        .font(.custom(HelveticaNeue.light, size: 20))
+        .foregroundColor(Colors.grayText)
+    }
   }
 }
 

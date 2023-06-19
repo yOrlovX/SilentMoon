@@ -19,7 +19,7 @@ struct SignUpView: View {
       
       buttonsContainer
       
-      Text("OR LOG IN WITH EMAIL")
+      Text("OR REGISTER ACCOUNT")
         .font(.custom(HelveticaNeue.bold, size: 14))
         .foregroundColor(Colors.grayText)
       

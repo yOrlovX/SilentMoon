@@ -26,7 +26,7 @@ struct SignInView: View {
       
       loginButtonContainer
       
-      haveAccountContainer
+      dontHaveAccountContainer
     }
     .navigationBarHidden(true)
     .frame(maxHeight: UIScreen.main.bounds.height - 80)
@@ -84,13 +84,13 @@ extension SignInView {
     }
   }
   
-  private var haveAccountContainer: some View {
+  private var dontHaveAccountContainer: some View {
     HStack {
-      Text("ALREADY HAVE AN ACCOUNT?")
+      Text("DONT HAVE AN ACCOUNT?")
         .font(.custom(HelveticaNeue.medium, size: 14))
         .foregroundColor(.gray)
       Button(action: {}) {
-        Text("SIGN IN")
+        Text("SIGN UP")
           .font(.custom(HelveticaNeue.medium, size: 14))
           .foregroundColor(.blue)
       }
