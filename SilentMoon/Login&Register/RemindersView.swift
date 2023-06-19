@@ -25,6 +25,7 @@ struct RemindersView: View {
       CustomDayPicker()
       buttonsContainer
     }
+    .navigationBarHidden(true)
     .padding(.horizontal, 20)
     .onAppear {
 //      notificationManager.requestNotificationAuthorization()
@@ -35,14 +36,18 @@ struct RemindersView: View {
 extension RemindersView {
   private var buttonsContainer: some View {
     VStack(spacing: 20) {
-      Button(action: { notificationManager.scheduleNotification() }) {
+      NavigationLink(destination: ChooseTopicView()) {
         Text("SAVE")
           .modifier(PrimaryButtonModifier())
+          .onTapGesture {
+            notificationManager.scheduleNotification()
+          }
       }
-      Button(action: {}) {
+      
+      NavigationLink(destination: ChooseTopicView()) {
         Text("NO THANKS")
           .foregroundColor(.black)
-          .frame(maxWidth: .infinity)
+          .font(.custom(HelveticaNeue.medium, size: 14))
       }
     }
   }

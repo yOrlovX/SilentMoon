@@ -47,6 +47,7 @@ struct ChooseTopicView: View {
       }
     }
     .padding(.horizontal, 20)
+    .navigationBarHidden(true)
   }
 }
 
