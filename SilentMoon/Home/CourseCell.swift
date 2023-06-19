@@ -44,7 +44,7 @@ struct CourseCell: View {
 }
 
 struct CourseCell_Previews: PreviewProvider {
-  static var previewsData =  Course(name: "Mindful Moments", description: "Cultivate mindfulness through short daily exercises.", duration: "5-10 min", image: "mindful_moments", detail: "Learn the basics of mindfulness and incorporate it into your daily life.", favoritesCount: 120, listeningCount: 230)
+  static var previewsData =  Course(name: "Mindful Moments", description: "Cultivate mindfulness through short daily exercises.", duration: "5-10 min", image: "1", detail: "Learn the basics of mindfulness and incorporate it into your daily life.", favoritesCount: 120, listeningCount: 230)
     
   static var previews: some View {
       CourseCell(course: previewsData)

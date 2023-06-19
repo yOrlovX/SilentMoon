@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct RemindersView: View {
   @State private var selectedTime = Date()
+  @StateObject private var notificationManager = NotificationManager()
   
   var body: some View {
     VStack(alignment: .leading, spacing: 40) {
@@ -24,13 +26,16 @@ struct RemindersView: View {
       buttonsContainer
     }
     .padding(.horizontal, 20)
+    .onAppear {
+      notificationManager.requestNotificationAuthorization()
+    }
   }
 }
 
 extension RemindersView {
   private var buttonsContainer: some View {
     VStack(spacing: 20) {
-      Button(action: {}) {
+      Button(action: { notificationManager.scheduleNotification() }) {
         Text("SAVE")
           .modifier(PrimaryButtonModifier())
       }
@@ -62,7 +67,7 @@ extension RemindersView {
         .foregroundColor(Colors.grayText)
         .lineSpacing(5)
     }
-  }
+  } 
 }
 
 struct RemindersView_Previews: PreviewProvider {

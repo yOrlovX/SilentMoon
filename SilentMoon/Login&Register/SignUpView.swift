@@ -99,7 +99,7 @@ extension SignUpView {
           .frame(width: 25, height: 25)
         Spacer()
       }
-      NavigationLink(destination: MainView()) {
+      NavigationLink(destination: RemindersView()) {
         Text("GET STARTED")
           .modifier(PrimaryButtonModifier())
       }

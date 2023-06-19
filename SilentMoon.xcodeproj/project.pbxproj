@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9222367C2A3862E500347376 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9222367B2A3862E500347376 /* CourseDetailView.swift */; };
+		9222367E2A38AC1D00347376 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9222367D2A38AC1D00347376 /* NotificationManager.swift */; };
 		92258D602A20EA4400653623 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92258D5F2A20EA4400653623 /* CustomTabBar.swift */; };
 		92258D632A20F17B00653623 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92258D622A20F17B00653623 /* MainView.swift */; };
 		923118B72A335D4C0051D8B4 /* track6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 923118B12A335D490051D8B4 /* track6.mp3 */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		9222367B2A3862E500347376 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
+		9222367D2A38AC1D00347376 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		92258D5F2A20EA4400653623 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		92258D622A20F17B00653623 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		923118B12A335D490051D8B4 /* track6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track6.mp3; sourceTree = "<group>"; };
@@ -142,9 +144,6 @@
 		92905C262A1E454C00B225E7 = {
 			isa = PBXGroup;
 			children = (
-				9289C1002A38616200C2A44E /* Profile */,
-				92E771442A2F5DDE00DC26C8 /* Extensions */,
-				92FB43792A2F23900080F95E /* Manager */,
 				92905C312A1E454C00B225E7 /* SilentMoon */,
 				92905C302A1E454C00B225E7 /* Products */,
 			);
@@ -161,6 +160,10 @@
 		92905C312A1E454C00B225E7 /* SilentMoon */ = {
 			isa = PBXGroup;
 			children = (
+				92905C322A1E454C00B225E7 /* SilentMoonApp.swift */,
+				92FB43792A2F23900080F95E /* Manager */,
+				92E771442A2F5DDE00DC26C8 /* Extensions */,
+				9289C1002A38616200C2A44E /* Profile */,
 				92258D612A20F16E00653623 /* Home */,
 				92F51BA12A249D6B004E3AD6 /* Meditate */,
 				926F39752A22460C0000256B /* Main */,
@@ -171,7 +174,6 @@
 				92905C4A2A1E74CD00B225E7 /* Login&Register */,
 				92905C472A1E4B8B00B225E7 /* Info.plist */,
 				92905C402A1E49CE00B225E7 /* Fonts */,
-				92905C322A1E454C00B225E7 /* SilentMoonApp.swift */,
 				92905C362A1E454E00B225E7 /* Assets.xcassets */,
 				923118B22A335D4A0051D8B4 /* track1.mp3 */,
 				923118B42A335D4B0051D8B4 /* track2.mp3 */,
@@ -266,6 +268,7 @@
 			children = (
 				92FB437A2A2F239F0080F95E /* AudioManager.swift */,
 				92FB437C2A2F256F0080F95E /* SongsViewModel.swift */,
+				9222367D2A38AC1D00347376 /* NotificationManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				929B880E2A1F4BCD004FDB23 /* SignInView.swift in Sources */,
 				92986DA52A1F9BBA0077E622 /* RemindersView.swift in Sources */,
 				92258D602A20EA4400653623 /* CustomTabBar.swift in Sources */,
+				9222367E2A38AC1D00347376 /* NotificationManager.swift in Sources */,
 				92905C4F2A1E797B00B225E7 /* Colors.swift in Sources */,
 				929B88172A1F6216004FDB23 /* ViewModifiers.swift in Sources */,
 				9264F78A2A32017A00B18FCF /* MeditateView.swift in Sources */,
