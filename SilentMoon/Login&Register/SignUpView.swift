@@ -7,15 +7,13 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct SignUpView: View {
   @State private var name: String = ""
   @State private var email: String = ""
   @State private var password: String = ""
   
   var body: some View {
-    VStack(spacing: 35) {
+    VStack(spacing: SignUpViewAdaptiveSpacing.spacing) {
       Text("Create your account")
         .font(.custom(HelveticaNeue.bold, size: 28))
       
