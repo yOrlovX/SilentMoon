@@ -13,12 +13,20 @@ struct StarterView: View {
       ZStack {
         Image("curvedFrame")
           .resizable()
-          .scaledToFit()
-        VStack {
-          logoContainer
-          Image("starterImage")
-        }
+          .frame(maxHeight: UIScreen.main.bounds.height / 2)
+          .frame(width: UIScreen.main.bounds.width)
+          .overlay {
+            VStack {
+              logoContainer
+              Image("starterImage")
+                .resizable()
+                .frame(maxWidth: UIScreen.main.bounds.width - 80)
+                .frame(maxHeight: 240)
+            }
+          }
+        
       }
+      Spacer()
       textContainer
       Spacer()
       buttonContainer
@@ -60,7 +68,7 @@ extension StarterView {
         Text("SIGN UP")
           .modifier(PrimaryButtonModifier())
       }
-     
+      
       HStack {
         Text("ALREADY HAVE AN ACCOUNT?")
           .font(.custom(HelveticaNeue.medium, size: 14))

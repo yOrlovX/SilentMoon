@@ -27,7 +27,7 @@ struct RemindersView: View {
     }
     .padding(.horizontal, 20)
     .onAppear {
-      notificationManager.requestNotificationAuthorization()
+//      notificationManager.requestNotificationAuthorization()
     }
   }
 }
