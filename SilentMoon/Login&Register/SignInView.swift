@@ -12,8 +12,7 @@ struct SignInView: View {
   @State private var password: String = ""
   
   var body: some View {
-    VStack(spacing: 35) {
-      Spacer()
+    VStack(spacing: 25) {
       Text("Welcome Back!")
         .font(.custom(HelveticaNeue.bold, size: 28))
       
@@ -26,8 +25,11 @@ struct SignInView: View {
       textFieldsContainer
       
       loginButtonContainer
+      
+      haveAccountContainer
     }
     .navigationBarHidden(true)
+    .frame(maxHeight: UIScreen.main.bounds.height - 80)
   }
 }
 
@@ -78,16 +80,19 @@ extension SignInView {
       }
       Text("Forgot Password?")
         .font(.custom(HelveticaNeue.medium, size: 14))
-      Spacer()
-      HStack {
-        Text("ALREADY HAVE AN ACCOUNT?")
+      
+    }
+  }
+  
+  private var haveAccountContainer: some View {
+    HStack {
+      Text("ALREADY HAVE AN ACCOUNT?")
+        .font(.custom(HelveticaNeue.medium, size: 14))
+        .foregroundColor(.gray)
+      Button(action: {}) {
+        Text("SIGN IN")
           .font(.custom(HelveticaNeue.medium, size: 14))
-          .foregroundColor(.gray)
-        Button(action: {}) {
-          Text("SIGN IN")
-            .font(.custom(HelveticaNeue.medium, size: 14))
-            .foregroundColor(.blue)
-        }
+          .foregroundColor(.blue)
       }
     }
   }
