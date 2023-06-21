@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SignInView: View {
+  @EnvironmentObject var onboardingViewModel: OnboardingViewModel
+  
   @State private var email: String = ""
   @State private var password: String = ""
   

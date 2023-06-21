@@ -9,7 +9,10 @@ import SwiftUI
 import UserNotifications
 
 struct RemindersView: View {
+  @EnvironmentObject var onboardingViewModel: OnboardingViewModel
+  
   @State private var selectedTime = Date()
+  
   @StateObject private var notificationManager = NotificationManager()
   
   var body: some View {
@@ -28,7 +31,7 @@ struct RemindersView: View {
     .navigationBarHidden(true)
     .padding(.horizontal, 20)
     .onAppear {
-//      notificationManager.requestNotificationAuthorization()
+      //      notificationManager.requestNotificationAuthorization()
     }
   }
 }
@@ -36,15 +39,17 @@ struct RemindersView: View {
 extension RemindersView {
   private var buttonsContainer: some View {
     VStack(spacing: 20) {
-      NavigationLink(destination: ChooseTopicView()) {
+      Button(action: {
+        onboardingViewModel.state = .topics
+        notificationManager.scheduleNotification()
+      }) {
         Text("SAVE")
-          .modifier(PrimaryButtonModifier())
-          .onTapGesture {
-            notificationManager.scheduleNotification()
-          }
       }
-      
-      NavigationLink(destination: ChooseTopicView()) {
+      .modifier(PrimaryButtonModifier())
+      Button(action: {
+        onboardingViewModel.state = .topics
+        notificationManager.scheduleNotification()
+      }) {
         Text("NO THANKS")
           .foregroundColor(.black)
           .font(.custom(HelveticaNeue.medium, size: 14))
@@ -72,7 +77,7 @@ extension RemindersView {
         .foregroundColor(Colors.grayText)
         .lineSpacing(5)
     }
-  } 
+  }
 }
 
 struct RemindersView_Previews: PreviewProvider {

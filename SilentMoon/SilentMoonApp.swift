@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SilentMoonApp: App {
+  let onboardingViewModel = OnboardingViewModel.init()
+  
     var body: some Scene {
         WindowGroup {
-          WelcomeView()
+          OnboardingView()
         }
     }
 }

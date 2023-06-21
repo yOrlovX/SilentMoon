@@ -22,6 +22,8 @@
 		9264F78A2A32017A00B18FCF /* MeditateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264F7892A32017A00B18FCF /* MeditateView.swift */; };
 		9264F78C2A32129700B18FCF /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264F78B2A32129700B18FCF /* PlayerView.swift */; };
 		926F39772A2246B70000256B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926F39762A2246B70000256B /* HomeView.swift */; };
+		927A0EA52A40CD9F002A4B80 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A0EA42A40CD9F002A4B80 /* OnboardingView.swift */; };
+		927A0EA72A40D00A002A4B80 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A0EA62A40D00A002A4B80 /* OnboardingViewModel.swift */; };
 		9289C1022A38617100C2A44E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289C1012A38617100C2A44E /* ProfileView.swift */; };
 		92905C332A1E454C00B225E7 /* SilentMoonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92905C322A1E454C00B225E7 /* SilentMoonApp.swift */; };
 		92905C372A1E454E00B225E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92905C362A1E454E00B225E7 /* Assets.xcassets */; };
@@ -66,6 +68,8 @@
 		9264F7892A32017A00B18FCF /* MeditateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditateView.swift; sourceTree = "<group>"; };
 		9264F78B2A32129700B18FCF /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		926F39762A2246B70000256B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		927A0EA42A40CD9F002A4B80 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		927A0EA62A40D00A002A4B80 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		9289C1012A38617100C2A44E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		92905C2F2A1E454C00B225E7 /* SilentMoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilentMoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92905C322A1E454C00B225E7 /* SilentMoonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentMoonApp.swift; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				929B880D2A1F4BCD004FDB23 /* SignInView.swift */,
 				92986DA42A1F9BBA0077E622 /* RemindersView.swift */,
 				92CFB4F62A23C3D6006AB216 /* ChooseTopicView.swift */,
+				927A0EA42A40CD9F002A4B80 /* OnboardingView.swift */,
+				927A0EA62A40D00A002A4B80 /* OnboardingViewModel.swift */,
 			);
 			path = "Login&Register";
 			sourceTree = "<group>";
@@ -357,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927A0EA52A40CD9F002A4B80 /* OnboardingView.swift in Sources */,
 				92905C4C2A1E74F300B225E7 /* StarterView.swift in Sources */,
 				92E771462A2F5DF200DC26C8 /* ImageExtension.swift in Sources */,
 				926F39772A2246B70000256B /* HomeView.swift in Sources */,
@@ -381,6 +388,7 @@
 				92F51BA32A249D9A004E3AD6 /* MusicPlayer.swift in Sources */,
 				9222367C2A3862E500347376 /* CourseDetailView.swift in Sources */,
 				92905C492A1E512E00B225E7 /* HelveticaNeue.swift in Sources */,
+				927A0EA72A40D00A002A4B80 /* OnboardingViewModel.swift in Sources */,
 				92905C332A1E454C00B225E7 /* SilentMoonApp.swift in Sources */,
 				929B88192A1F728A004FDB23 /* SignUpView.swift in Sources */,
 				92CFB4F72A23C3D6006AB216 /* ChooseTopicView.swift in Sources */,

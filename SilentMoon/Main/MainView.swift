@@ -22,6 +22,7 @@ struct MainView: View {
         VStack {
           TabView(selection: $selectedTab) {
             HomeView()
+              .navigationBarHidden(true)
               .tag(Tab.home)
 //              .navigationBarTitle("")
 //              .navigationBarBackButtonHidden(true)

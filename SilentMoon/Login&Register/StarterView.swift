@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StarterView: View {
+  @EnvironmentObject var onboardingViewModel: OnboardingViewModel
+  
   var body: some View {
     VStack {
       ZStack {
@@ -64,16 +66,15 @@ extension StarterView {
   
   private var buttonContainer: some View {
     VStack(spacing: 20) {
-      NavigationLink(destination: SignUpView()) {
+      Button(action: { onboardingViewModel.state = .singUp }) {
         Text("SIGN UP")
-          .modifier(PrimaryButtonModifier())
       }
-      
+      .modifier(PrimaryButtonModifier())
       HStack {
         Text("ALREADY HAVE AN ACCOUNT?")
           .font(.custom(HelveticaNeue.medium, size: 14))
           .foregroundColor(.gray)
-        NavigationLink(destination: SignInView()) {
+        Button(action: { onboardingViewModel.state = .singIn }) {
           Text("LOG IN")
             .font(.custom(HelveticaNeue.medium, size: 14))
             .foregroundColor(.blue)

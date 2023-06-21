@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SignUpView: View {
+  @EnvironmentObject var onboardingViewModel: OnboardingViewModel
+  
   @State private var name: String = ""
   @State private var email: String = ""
   @State private var password: String = ""
@@ -97,10 +99,10 @@ extension SignUpView {
           .frame(width: 25, height: 25)
         Spacer()
       }
-      NavigationLink(destination: RemindersView()) {
+      Button(action: { onboardingViewModel.state = .reminders }) {
         Text("GET STARTED")
-          .modifier(PrimaryButtonModifier())
       }
+      .modifier(PrimaryButtonModifier())
     }
   }
 }

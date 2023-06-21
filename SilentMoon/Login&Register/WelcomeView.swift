@@ -8,29 +8,28 @@
 import SwiftUI
 
 struct WelcomeView: View {
+  @EnvironmentObject var onboardingViewModel: OnboardingViewModel
+  
   var body: some View {
-    NavigationView {
-      ZStack {
-        Colors.purpleBg
-          .ignoresSafeArea()
-        VStack(spacing: 40) {
-          logoContainer
-          Spacer()
-          textContainer
-          Spacer()
-          Image("meditate")
-            .resizable()
-            .scaledToFit()
-          NavigationLink(destination: StarterView()) {
-            Text("GET STARTED")
-          }
-          .modifier(GrayButtonModifier())
-          Spacer()
+    ZStack {
+      Colors.purpleBg
+        .ignoresSafeArea()
+      VStack(spacing: 40) {
+        logoContainer
+        Spacer()
+        textContainer
+        Spacer()
+        Image("meditate")
+          .resizable()
+          .scaledToFit()
+        Button(action: { onboardingViewModel.state = .starter }) {
+          Text("GET STARTED")
         }
+        .modifier(GrayButtonModifier())
+        Spacer()
       }
-      .background(.ultraThinMaterial)
-      .navigationBarHidden(true)
     }
+    .background(.ultraThinMaterial)
   }
 }
 
