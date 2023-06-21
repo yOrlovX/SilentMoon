@@ -26,6 +26,8 @@ struct OnboardingView: View {
         RemindersView()
       case .topics:
         ChooseTopicView()
+      case .main:
+        MainView()
       }
     }
     .environmentObject(viewModel)

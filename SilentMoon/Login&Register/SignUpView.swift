@@ -101,8 +101,8 @@ extension SignUpView {
       }
       Button(action: { onboardingViewModel.state = .reminders }) {
         Text("GET STARTED")
+          .modifier(PrimaryButtonModifier())
       }
-      .modifier(PrimaryButtonModifier())
     }
   }
 }

@@ -29,8 +29,7 @@ struct SignInView: View {
       loginButtonContainer
       
       dontHaveAccountContainer
-    }
-    .navigationBarHidden(true)
+    }    
     .frame(maxHeight: UIScreen.main.bounds.height - 80)
   }
 }
@@ -76,13 +75,12 @@ extension SignInView {
   
   private var loginButtonContainer: some View {
     VStack(spacing: 20) {
-      NavigationLink(destination: MainView()) {
+      Button(action: { onboardingViewModel.state = .main }) {
         Text("LOG IN")
           .modifier(PrimaryButtonModifier())
       }
       Text("Forgot Password?")
         .font(.custom(HelveticaNeue.medium, size: 14))
-      
     }
   }
   
@@ -91,7 +89,7 @@ extension SignInView {
       Text("DONT HAVE AN ACCOUNT?")
         .font(.custom(HelveticaNeue.medium, size: 14))
         .foregroundColor(.gray)
-      Button(action: {}) {
+      Button(action: { onboardingViewModel.state = .singUp }) {
         Text("SIGN UP")
           .font(.custom(HelveticaNeue.medium, size: 14))
           .foregroundColor(.blue)

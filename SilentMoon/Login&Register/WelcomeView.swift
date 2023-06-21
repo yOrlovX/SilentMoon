@@ -24,8 +24,9 @@ struct WelcomeView: View {
           .scaledToFit()
         Button(action: { onboardingViewModel.state = .starter }) {
           Text("GET STARTED")
+            .modifier(GrayButtonModifier())
         }
-        .modifier(GrayButtonModifier())
+        
         Spacer()
       }
     }

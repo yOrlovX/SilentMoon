@@ -68,8 +68,8 @@ extension StarterView {
     VStack(spacing: 20) {
       Button(action: { onboardingViewModel.state = .singUp }) {
         Text("SIGN UP")
+          .modifier(PrimaryButtonModifier())
       }
-      .modifier(PrimaryButtonModifier())
       HStack {
         Text("ALREADY HAVE AN ACCOUNT?")
           .font(.custom(HelveticaNeue.medium, size: 14))

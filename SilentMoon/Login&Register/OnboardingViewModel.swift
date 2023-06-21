@@ -19,6 +19,7 @@ enum OnboardingState {
   case singUp
   case reminders
   case topics
+  case main
 }
 
 
