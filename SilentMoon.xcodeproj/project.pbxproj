@@ -43,6 +43,7 @@
 		929B88192A1F728A004FDB23 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B88182A1F728A004FDB23 /* SignUpView.swift */; };
 		92AD00802A407AE800C8AD4E /* AdaptiveSpacings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AD007F2A407AE800C8AD4E /* AdaptiveSpacings.swift */; };
 		92BB99EC2A30F88E0076018E /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BB99EB2A30F88E0076018E /* CourseCell.swift */; };
+		92C8EC302A448EBD00424C1C /* SleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C8EC2F2A448EBD00424C1C /* SleepView.swift */; };
 		92CFB4F72A23C3D6006AB216 /* ChooseTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CFB4F62A23C3D6006AB216 /* ChooseTopicView.swift */; };
 		92E771462A2F5DF200DC26C8 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E771452A2F5DF200DC26C8 /* ImageExtension.swift */; };
 		92F51B9F2A249D40004E3AD6 /* Otjanbird-Pt.-I.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92F51B9D2A249D3F004E3AD6 /* Otjanbird-Pt.-I.mp3 */; };
@@ -91,6 +92,7 @@
 		929B88182A1F728A004FDB23 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		92AD007F2A407AE800C8AD4E /* AdaptiveSpacings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveSpacings.swift; sourceTree = "<group>"; };
 		92BB99EB2A30F88E0076018E /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		92C8EC2F2A448EBD00424C1C /* SleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepView.swift; sourceTree = "<group>"; };
 		92CFB4F62A23C3D6006AB216 /* ChooseTopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicView.swift; sourceTree = "<group>"; };
 		92E771452A2F5DF200DC26C8 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		92F51B9D2A249D3F004E3AD6 /* Otjanbird-Pt.-I.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Otjanbird-Pt.-I.mp3"; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				92905C512A1E81D700B225E7 /* WelcomeSleepView.swift */,
+				92C8EC2F2A448EBD00424C1C /* SleepView.swift */,
 			);
 			path = Sleep;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				9289C1022A38617100C2A44E /* ProfileView.swift in Sources */,
 				92FB437B2A2F239F0080F95E /* AudioManager.swift in Sources */,
 				929B880E2A1F4BCD004FDB23 /* SignInView.swift in Sources */,
+				92C8EC302A448EBD00424C1C /* SleepView.swift in Sources */,
 				92986DA52A1F9BBA0077E622 /* RemindersView.swift in Sources */,
 				92258D602A20EA4400653623 /* CustomTabBar.swift in Sources */,
 				9222367E2A38AC1D00347376 /* NotificationManager.swift in Sources */,
