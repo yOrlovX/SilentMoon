@@ -12,24 +12,27 @@ struct OnboardingView: View {
   @StateObject var viewModel = OnboardingViewModel()
   
   var body: some View {
-    ZStack {
-      switch viewModel.state {
-      case .welcome:
-        WelcomeView()
-      case .starter:
-        StarterView()
-      case .singIn:
-        SignInView()
-      case .singUp:
-        SignUpView()
-      case .reminders:
-        RemindersView()
-      case .topics:
-        ChooseTopicView()
-      case .main:
-        MainView()
+    NavigationView {
+      ZStack {
+        switch viewModel.state {
+        case .welcome:
+          WelcomeView()
+        case .starter:
+          StarterView()
+        case .singIn:
+          SignInView()
+        case .singUp:
+          SignUpView()
+        case .reminders:
+          RemindersView()
+        case .topics:
+          ChooseTopicView()
+        case .main:
+          MainView()
+        }
       }
+      .navigationBarHidden(true)
+      .environmentObject(viewModel)
     }
-    .environmentObject(viewModel)
   }
 }

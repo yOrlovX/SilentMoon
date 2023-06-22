@@ -1,48 +1,29 @@
-//
-//  HomeView.swift
-//  SilentMoon
-//
-//  Created by Yaroslav Orlov on 26.05.2023.
-//
-
 import SwiftUI
 
 struct MainView: View {
   
   @State var selectedTab: Tab = .home
   
-  init() {
-    UITabBar.appearance().isHidden = true
-  }
-  
   var body: some View {
     ZStack {
-      
-      VStack {
-        VStack {
-          TabView(selection: $selectedTab) {
-            HomeView()
-              .navigationBarHidden(true)
-              .tag(Tab.home)
-//              .navigationBarTitle("")
-//              .navigationBarBackButtonHidden(true)
-//              .navigationBarHidden(true)
-            WelcomeSleepView()
-              .tag(Tab.sleep)
-            MeditateView()
-              .tag(Tab.meditateTab)
-//            MusicPlayer()
-//              .tag(Tab.music)
-            ProfileView()
-              .tag(Tab.profile)
-          }
-        }
+      tabView
+    }
+  }
+  
+  @ViewBuilder
+  var tabView: some View {
+    VStack {
+      switch selectedTab {
+      case .home:
+        HomeView()
+      case .sleep:
+        HomeView()
+      case .meditateTab:
+        MeditateView()
+      case .profile:
+        ProfileView()
       }
-      
-      VStack {
-        Spacer()
-        CustomTabBar(selectedTab: $selectedTab)
-      }
+      CustomTabBar(selectedTab: $selectedTab)
     }
   }
 }

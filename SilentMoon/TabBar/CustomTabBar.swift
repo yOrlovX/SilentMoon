@@ -11,7 +11,6 @@ enum Tab: String, CaseIterable {
   case home
   case sleep
   case meditateTab
-  case music
   case profile
 }
 
