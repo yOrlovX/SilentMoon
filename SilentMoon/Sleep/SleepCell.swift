@@ -35,8 +35,8 @@ struct SleepCell: View {
     }
 }
 
-struct SleepCell_Previews: PreviewProvider {
-    static var previews: some View {
-        SleepCell()
-    }
-}
+//struct SleepCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SleepCell()
+//    }
+//}
